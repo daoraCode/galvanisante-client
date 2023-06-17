@@ -54,7 +54,7 @@ a:hover {
 
 body {
   background: url('/banner-header.png') center no-repeat;
-  background-position-y: -19em;
+  background-position-y: -11.45em;
   background-size: contain;  
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;    
@@ -65,12 +65,15 @@ body {
   font-family: 'Sohne-Breit-Dreiviertelfett';
 }
 
+/* banner in mobile version */
+/* @media screen { */
+  /* background-position-y: -11.45em; */
+/* } */
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
-
 
 /* @media (prefers-color-scheme: light) {
   :root {

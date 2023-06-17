@@ -50,6 +50,7 @@ export const Signup = () => {
           Prénom
         </label>
         <input
+          placeholder="Jon Snow"
           className="input-su-form"
           id="firstName"
           name="firstName"
@@ -59,13 +60,14 @@ export const Signup = () => {
           value={formik.values.firstName}
         />
         {formik.touched.firstName && formik.errors.firstName ? (
-          <div>{formik.errors.firstName}</div>
+          <div className="su-form-error-alert">{formik.errors.firstName}</div>
         ) : null}
 
         <label className="su-form-label" htmlFor="username">
           Surnom
         </label>
         <input
+          placeholder="winterfell-son"
           className="input-su-form"
           id="username"
           name="username"
@@ -75,13 +77,14 @@ export const Signup = () => {
           value={formik.values.username}
         />
         {formik.touched.username && formik.errors.username ? (
-          <div>{formik.errors.username}</div>
+          <div className="su-form-error-alert">{formik.errors.username}</div>
         ) : null}
 
         <label className="su-form-label" htmlFor="email">
           Adresse e-mail
         </label>
         <input
+          placeholder="jonsnow@got.com"
           className="input-su-form"
           id="email"
           name="email"
@@ -91,7 +94,7 @@ export const Signup = () => {
           value={formik.values.email}
         />
         {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
+          <div className="su-form-error-alert">{formik.errors.email}</div>
         ) : null}
 
         <button className="su-form-btn" type="submit">

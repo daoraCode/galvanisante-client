@@ -8,6 +8,12 @@
   margin: auto;
 }
 
+.su-form-error-alert {
+  text-align: left;
+  font-size: 11px;
+  color: red;
+}
+
 /* .input */
 /* Label and input styling */
 .su-form-label {
@@ -25,6 +31,10 @@
   font-family: inherit;
 }
 
+.input-su-form::placeholder {
+  color: #ffffff4e;
+}
+
 .input-su-form[type=text], .input-su-form[type=email], .input-su-form[type=password] {
   display: block;
   color: #fff;
@@ -35,7 +45,7 @@
   /* padding: 0 1.2em; */
   margin: 8px auto;
   border-radius: 3px;
-  border: 3px solid black;
+  border: 3px solid rgba(241, 241, 241, 0.648);
   transition: border-color 0.35s;
   background-color: rgba(255, 254, 239, 0.417);
 }
