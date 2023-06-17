@@ -1,5 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useFormik } from "formik"
+
+// context
+import { SubscriberContext } from "../../contexts/SubscriberContext"
+
+// styles
 import "./signup.css"
 
 // a custom valisation function.
@@ -42,7 +47,9 @@ const validate = (values) => {
   return errors
 }
 
-export const Signup = () => {
+export const Signup = (props) => {
+  const { user, signup } = useContext(SubscriberContext)
+
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   const formik = useFormik({
@@ -53,8 +60,8 @@ export const Signup = () => {
     },
     validate,
     onSubmit: (values) => {
-      console.log(values)
-      alert(JSON.stringify(values, null, 2))
+      signup(values), console.log(values)
+      // alert(JSON.stringify(values, null, 2))
     },
   })
 
