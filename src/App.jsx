@@ -1,11 +1,20 @@
 import React from "react"
-import { SignupForm } from "./component/Forms/SingnuForm"
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Signup } from "./pages/Signup/Signup"
+// import { Footer } from "./components/Footer/Footer"
+import { Header } from "./components/Header/Header"
 
 const App = () => {
   return (
-    <div>
-      <SignupForm />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Signup />} />
+        {/* <Route path="*" element={<Not Found />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </BrowserRouter>
   )
 }
 

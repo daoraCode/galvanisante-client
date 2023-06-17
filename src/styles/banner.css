@@ -1,0 +1,13 @@
+.banner {
+  position: fixed; /* !important */
+  width: 100%;
+	background-size: 500% 500%;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  background: url('../../public/banner-header.png') 100%;
+  background-size: cover;  
+  z-index: 100 !important;
+}
