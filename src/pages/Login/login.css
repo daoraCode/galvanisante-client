@@ -1,5 +1,5 @@
 .main-si-form {
-  padding-top: 7.5em;
+  padding-top: 14em;
   display: flex;
   justify-content: center;
   height: inherit;
@@ -67,7 +67,7 @@
   }
 } */
  
-.si-form-btn {
+.si-btn-form {
   border-radius: 3px;
   border: 3.5px solid transparent;
   padding: .4em 7.7em;

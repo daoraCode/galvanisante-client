@@ -1,7 +1,7 @@
 import React from "react"
 // import { Header } from "./components/Header/Header" 
 // router
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 // context
 import { SubscriberContextProvider } from "./contexts/SubscriberContext"
 // pages
@@ -15,16 +15,14 @@ import { Login } from "./pages/Login/Login"
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <SubscriberContextProvider>
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/memory" element={<Memory />} />
-          <Route path="/movie" element={<Movie />} />
-        </Routes>
-      </SubscriberContextProvider>
-    </BrowserRouter>
+    <SubscriberContextProvider>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/memory" element={<Memory />} />
+        <Route path="/movie" element={<Movie />} />
+      </Routes>
+    </SubscriberContextProvider>
   )
 }
 
