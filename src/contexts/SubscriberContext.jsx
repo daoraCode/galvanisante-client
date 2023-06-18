@@ -1,3 +1,4 @@
+// import axios from "axios"
 import { createContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -10,48 +11,37 @@ const SubscriberContextProvider = ({ children }) => {
   const [user, setUser] = useState(null)
 
   const signup = async (values) => {
-    const res = await fetch("http://localhost:4004/api/user/auth/signup", {
-      method: "post",
-      headers: {
-        "Content-type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        username: values.username,
-        email: values.email,
-        password: values.password,
-      }),
-    })
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/signup`,
+      {
+        method: "post",
+        headers: {
+          "Content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          username: values.username,
+          email: values.email,
+          password: values.password,
+        }),
+      }
+    )
 
     const subscriber = await res.json()
 
     if (subscriber.error) {
+      console.log("hello")
       alert(subscriber.error)
       return
-    }
-
-    const loginRes = await fetch("http://localhost:4004/api/user/auth/login", {
-      method: "post",
-      headers: {
-        "Content-type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        email: subscriber.email,
-        password: subscriber.password,
-      }),
-    })
-
-    const loginData = await loginRes.json()
-
-    if (loginRes.status >= 400) {
-      alert(loginRes.statusText)
     } else {
-      console.log(loginRes)
-      navigate("/movie")
+      navigate("/memory")
     }
 
-    setSubscriber(loginData)
+    // if (res.status !== 200) {
+    //   alert("registration failed")
+    // } else {
+    //   alert("registration succesful")
+    // }
   }
 
   const value = {
@@ -59,6 +49,7 @@ const SubscriberContextProvider = ({ children }) => {
     setSubscriber,
     user,
     setUser,
+    signup,
     // getUser,
   }
 

@@ -1,5 +1,5 @@
-.main-su-form {
-  padding-top: 14em;
+.main-si-form {
+  padding-top: 7.5em;
   display: flex;
   justify-content: center;
   height: inherit;
@@ -8,7 +8,7 @@
   margin: auto;
 }
 
-.su-form-error-alert {
+.si-form-error-alert {
   text-align: left;
   font-size: 11px;
   color: red;
@@ -16,41 +16,41 @@
 
 /* .input */
 /* Label and input styling */
-.su-form-label {
+.si-form-label {
   font-size: 14px;
   display: inline-block;
   font-weight: 700;
   margin-bottom: 2px;
 }
 
-.su-heading-text-form {
+.si-heading-text-form {
   font-size: 1.6em;
   text-align: center;
   display: block;
   padding: 1.5em auto;
-  /* font-family: inherit; */
+  font-family: inherit;
 }
 
-.su-input-form::placeholder {
+.si-input-form::placeholder {
   color: #ffffff4e;
 }
 
-.su-input-form[type=text], .su-input-form[type=email], .su-input-form[type=password] {
+.si-input-form[type=text], .si-input-form[type=email], .si-input-form[type=password] {
   display: block;
   color: #fff;
   font-family: inherit;
   font-size: 14px;
-  width: 100%;
+  width: 99%;
   height: 40px;
-  padding: 0 .77em;
+  /* padding: 0 1.2em; */
   margin: 8px auto;
   border-radius: 3px;
   border: 3px solid rgba(241, 241, 241, 0.648);
   transition: border-color 0.35s;
-  background-color: rgba(255, 254, 239, 0.494);
+  background-color: rgba(255, 254, 239, 0.417);
 }
 
-.su-input-form[type=text]:focus, .su-input-form[type=email]:focus,  .su-input-form[type=password]:focus {
+.si-input-form[type=text]:focus, .si-input-form[type=email]:focus,  .si-input-form[type=password]:focus {
   outline: none;
   border: 3px solid transparent;
   /* background-image: linear-gradient(white, rgb(255, 255, 255)), linear-gradient(35deg, rgb(255, 230, 160), rgb(255, 235, 148), rgb(255, 249, 216)); */
@@ -67,7 +67,7 @@
   }
 } */
  
-.su-btn-form {
+.si-form-btn {
   border-radius: 3px;
   border: 3.5px solid transparent;
   padding: .4em 7.7em;
@@ -82,27 +82,27 @@
   width: 100%;
 }
 
-.su-btn-form:hover {
+.si-btn-form:hover {
   border-color: #c7ac6e;
 }
 
-.su-btn-form:focus,
-.su-btn-form:focus-visible {
+.si-btn-form:focus,
+.si-btn-form:focus-visible {
   outline: 3.5px auto #c7ac6e;
   /* outline: 4px auto :-webkit-focus-ring-color; */
 }
 
  /* 
 @media (max-width: 650px) {
-   .su-form-label {
+   .si-form-label {
       width: 100%;
       max-width: fit-content;
     }
-    .su-input-form {
+    .input-si-form {
       width: 100%;
       padding: 0 2em;
     }
-    .btn-su-form {
+    .btn-si-form {
       width: 100%;
       /* max-width: 75%;
     } */

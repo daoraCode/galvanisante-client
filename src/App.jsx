@@ -7,7 +7,8 @@ import { SubscriberContextProvider } from "./contexts/SubscriberContext"
 // pages
 import { Signup } from "./pages/Signup/Signup"
 import { Movie } from "./pages/Movie/Movie"
-import { Weekly } from "./pages/Weekly/Weekly"
+import { Memory } from "./pages/Memory/Memory"
+import { Login } from "./pages/Login/Login"
 
 // components
 // import { Footer } from "./components/Footer/Footer"
@@ -17,13 +18,14 @@ const App = () => {
     <BrowserRouter>
       <SubscriberContextProvider>
         <Routes>
-          <Route exact path="/" element={<Signup />} />
-          <Route path="/weekly" element={<Weekly />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/memory" element={<Memory />} />
           <Route path="/movie" element={<Movie />} />
         </Routes>
       </SubscriberContextProvider>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App
