@@ -5,16 +5,28 @@
   display: flex;
   top: 0;
   left: 0;
-  box-sizing: border-box;
-  background-color: #00000017;
-  /* position: fixed; */
-  /* -ms-flex-pack: justify;
+  background-color: #00000037;
+  position: fixed;
+  align-items: center;
+  -ms-flex-pack: justify;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  justify-content: space-between; */
-  /* background-color:  /#fff; */
+  justify-content: space-between;
 }
 
-/* .container-link_home {
+.container-link_home {
   padding: 10px;
-} */
+} 
+
+.auth-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-link {
+  padding: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fff;
+}
