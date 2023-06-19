@@ -62,56 +62,62 @@ export const Signup = (props) => {
     <div className="main-su-form">
       <h3 className="su-heading-text-form">INSCRIPTION</h3>
       <form className="su-form" onSubmit={formik.handleSubmit}>
-        <label className="su-form-label" htmlFor="username">
-          Surnom
-        </label>
-        <input
-          placeholder="winterfell-son"
-          className="su-input-form"
-          id="username"
-          name="username"
-          type="text"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.username}
-        />
-        {formik.touched.username && formik.errors.username ? (
-          <div className="su-form-error-alert">{formik.errors.username}</div>
-        ) : null}
+        <div className="su-usrn-ctn">
+          <label className="su-form-label" htmlFor="username">
+            Surnom
+          </label>
+          <input
+            placeholder="winterfell-son"
+            className="su-input-form"
+            id="username"
+            name="username"
+            type="text"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.username}
+          />
+          {formik.touched.username && formik.errors.username ? (
+            <div className="su-form-error-alert">{formik.errors.username}</div>
+          ) : null}
+        </div>
 
-        <label className="su-form-label" htmlFor="email">
-          Adresse e-mail
-        </label>
-        <input
-          placeholder="jonsnow@hbo.com"
-          className="su-input-form"
-          id="email"
-          name="email"
-          type="email"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div className="su-form-error-alert">{formik.errors.email}</div>
-        ) : null}
+        <div className="su-em-ctn">
+          <label className="su-form-label" htmlFor="email">
+            Adresse e-mail
+          </label>
+          <input
+            placeholder="jonsnow@hbo.com"
+            className="su-input-form"
+            id="email"
+            name="email"
+            type="email"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div className="su-form-error-alert">{formik.errors.email}</div>
+          ) : null}
+        </div>
 
-        <label className="su-form-label" htmlFor="password">
-          Mot de passe
-        </label>
-        <input
-          placeholder="************"
-          className="su-input-form"
-          id="password"
-          name="password"
-          type="password"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div className="su-form-error-alert">{formik.errors.password}</div>
-        ) : null}
+        <div className="su-pswd-ctn">
+          <label className="su-form-label" htmlFor="password">
+            Mot de passe
+          </label>
+          <input
+            placeholder="************"
+            className="su-input-form"
+            id="password"
+            name="password"
+            type="password"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <div className="su-form-error-alert">{formik.errors.password}</div>
+          ) : null}
+        </div>
 
         <button className="su-btn-form" type="submit">
           S'inscrire

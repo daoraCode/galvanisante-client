@@ -26,7 +26,22 @@
 
 .auth-link {
   padding: 20px;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: .55em;
+    flex-direction: column;
+  }
+  
+  .auth-ctn {
+    display: flex;
+    padding-bottom: .95em;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

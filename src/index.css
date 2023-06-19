@@ -34,6 +34,7 @@
 a {
   color: #fff;
   text-decoration: none;
+  /* word-wrap: initial; */
 }
 
 a:hover {

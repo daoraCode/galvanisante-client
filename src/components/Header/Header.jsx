@@ -11,7 +11,7 @@ export const Header = () => {
       </Link>
       <div className="auth-ctn">
         <Link className="auth-link" to="/login">
-          Se connecter
+          <span>Se connecter</span>
         </Link>
         <Link className="auth-link" to="/signup">
           S'inscrire
