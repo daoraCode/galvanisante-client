@@ -1,0 +1,15 @@
+.main-layout {
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  padding-top: .61em;
+  margin: 0 20px;
+  position: relative;
+  height: 700px;
+}
+
+.heading-main-layout {
+  margin-top: 1.7em;
+  font-size: 4em;
+  text-align: center;
+}

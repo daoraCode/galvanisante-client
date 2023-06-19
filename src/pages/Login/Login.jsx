@@ -1,9 +1,9 @@
 // import axios from "axios"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { useFormik } from "formik"
 
 // react-router-dom
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 // contexts
 import { SubscriberContext } from "../../contexts/SubscriberContext"
@@ -12,6 +12,9 @@ import { SubscriberContext } from "../../contexts/SubscriberContext"
 import "./login.css"
 
 export const Login = () => {
+  // page navigation
+  const [redirect, setRedirect] = useState(false)
+  //
   const validate = (values) => {
     const errors = {}
     let passwordRegex = /(?=.*[0-9])/
@@ -42,32 +45,6 @@ export const Login = () => {
 
   const { login, setUser } = useContext(SubscriberContext)
 
-  // const login = async (values) => {
-  //   const res = await fetch(
-  //     `${import.meta.env.VITE_BACKEND_API}/api/user/auth/login`,
-  //     {
-  //       method: "post",
-  //       headers: {
-  //         "Content-type": "application/json",
-  //       },
-  //       credentials: "include",
-  //       body: JSON.stringify({
-  //         email: values.email,
-  //         password: values.password,
-  //       }),
-  //     }
-  //   )
-
-  //   if (res.status <= 400) {
-  //     throw res.statusText
-  //   } else {
-  //     console.log("Congrats, you're connected!")
-  //   }
-
-  //   const data = await res.json()
-  //   setUser(data)
-  // }
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -77,12 +54,13 @@ export const Login = () => {
     onSubmit: async (values, { setFieldError }) => {
       try {
         const response = await login(values)
-        setUser(respponse)
-        console.log("Great!")
+        setUser(response)
         navigate("/memories")
+        // console.log("Great!")
         // got to memory pages
-      } catch (error) {
-        setFieldError("submit", "Incorrect username/password")
+      } catch (e) {
+        // alert("wrong credentials")
+        setFieldError("submit", "Mot de passe ou surnom incorrect")
       }
     },
   })
@@ -96,7 +74,7 @@ export const Login = () => {
             Adresse e-mail
           </label>
           <input
-            placeholder="jonsnow@hbo.com"
+            placeholder="jonsnow@hbo.co"
             className="si-input-form"
             id="email"
             name="email"

@@ -1,5 +1,5 @@
 // import axios from "axios"
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const SubscriberContext = createContext({})
@@ -34,7 +34,7 @@ const SubscriberContextProvider = ({ children }) => {
       alert(newSubscriber.error)
       return
     } else {
-      // navigate("/memories")
+      navigate("/memories")
       console.log("Congrats, you've been registered!")
     }
 
@@ -68,16 +68,51 @@ const SubscriberContextProvider = ({ children }) => {
       alert(subscriber.error)
       return
     } else {
-      // navigate("/memories")
-      console.log("Congrats, you've been registered!")
+      setUser(res)
+      navigate("/memories")
+      console.log("Congrats, you've been logged in!")
     }
 
     if (res.status <= 400) {
       throw res.statusText
     } else {
       console.log("Congrats, you're connected!")
+      alert("Congrats, you're connected!")
     }
   }
+
+  const logout = async () => {
+    setUser(null)
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_API}/api/user/logout`,
+      {
+        method: "post",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+
+    if (res.status <= 400) {
+      throw res.statusText
+    } else {
+      navigate("/login")
+      console.log("Congrats, you've been logged out!")
+    }
+  }
+
+  const getUser = async () => {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_API}/api/user/me`, {
+      credentials: "include",
+    })
+    const data = await res.json()
+    setUser(data)
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
 
   const value = {
     subscriber,
@@ -86,7 +121,8 @@ const SubscriberContextProvider = ({ children }) => {
     setUser,
     signup,
     login,
-    // getUser,
+    logout,
+    getUser,
   }
 
   return (
