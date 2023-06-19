@@ -6,9 +6,7 @@ const SubscriberContext = createContext({})
 
 const SubscriberContextProvider = ({ children }) => {
   const navigate = useNavigate()
-
-  const [subscriber, setSubscriber] = useState({})
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
 
   const signup = async (values) => {
     const res = await fetch(
@@ -82,24 +80,12 @@ const SubscriberContextProvider = ({ children }) => {
   }
 
   const logout = async () => {
-    setUser(null)
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/user/logout`,
+      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/logout`,
       {
         method: "post",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
       }
     )
-
-    if (res.status <= 400) {
-      throw res.statusText
-    } else {
-      navigate("/login")
-      console.log("Congrats, you've been logged out!")
-    }
   }
 
   const getUser = async () => {

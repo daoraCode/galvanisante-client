@@ -53,11 +53,11 @@ export const Login = () => {
     validate,
     onSubmit: async (values, { setFieldError }) => {
       try {
-        const response = await login(values)
-        setUser(response)
-        navigate("/memories")
-        // console.log("Great!")
+        const res = await login(values)
+        setUser(res)
         // got to memory pages
+        // navigate("/memories")
+        console.log("Great!")
       } catch (e) {
         // alert("wrong credentials")
         setFieldError("submit", "Mot de passe ou surnom incorrect")
