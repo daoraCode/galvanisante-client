@@ -35,7 +35,9 @@ export const Login = () => {
     return errors
   }
 
-  const { user, signup } = useContext(SubscriberContext)
+  
+
+  const { setUser } = useContext(SubscriberContext)
 
   const formik = useFormik({
     initialValues: {
@@ -44,8 +46,8 @@ export const Login = () => {
     },
     validate,
     onSubmit: async (values) => {
-      await signup(values)
-      console.log(values.email)
+      await login(values)
+      // console.log(values.email)
     },
   })
 
