@@ -1,11 +1,26 @@
 .main-si-form {
   padding-top: 14em;
+  display: block;
+  height: inherit;
+  margin: 0 auto;
+  /* padding-top: 14em;
   display: flex;
   justify-content: center;
   height: inherit;
   align-items: center;
   flex-direction: column;
-  margin: auto;
+  margin: auto; */
+}
+
+.si-form {
+  max-width: 450px;
+  margin: 0 auto;
+  /* overflow ? */
+}
+
+.si-em-ctn,  
+.si-pswd-ctn {
+  min-width: 100%;
 }
 
 .si-form-error-alert {
@@ -14,13 +29,11 @@
   color: red;
 }
 
-/* .input */
-/* Label and input styling */
 .si-form-label {
   font-size: 14px;
-  display: inline-block;
   font-weight: 700;
   margin-bottom: 2px;
+  /* display: inline-block; */
 }
 
 .si-heading-text-form {
@@ -37,10 +50,10 @@
 
 .si-input-form[type=text], .si-input-form[type=email], .si-input-form[type=password] {
   display: block;
+  width: 100%;
   color: #fff;
   font-family: inherit;
   font-size: 14px;
-  width: 100%;
   height: 40px;
   padding: 0 .77em;
   margin: 8px auto;
@@ -53,11 +66,11 @@
 .si-input-form[type=text]:focus, .si-input-form[type=email]:focus,  .si-input-form[type=password]:focus {
   outline: none;
   border: 3px solid transparent;
+  border-color: #ffd064;
   /* background-image: linear-gradient(white, rgb(255, 255, 255)), linear-gradient(35deg, rgb(255, 230, 160), rgb(255, 235, 148), rgb(255, 249, 216)); */
   /* background-origin: border-box; */
   /* background-clip: padding-box, border-box; */
   /* animation: bg-hue 2s linear infinite; */
-  border-color: #ffd064;
 }
   
   /* @keyframes for the gradient animation */
@@ -68,18 +81,19 @@
 } */
  
 .si-btn-form {
+  display: block;
+  width: 100%;
+  text-align: center;
   border-radius: 3px;
   border: 3.5px solid transparent;
-  padding: .4em 7.7em;
+  height: 40px;
   font-size: 1.3em;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
   margin: 40px auto;
   transition: border-color 0.35s;
-  display: block;
   background-color:#ffd064;
-  width: 100%;
 }
 
 .si-btn-form:hover {
@@ -92,7 +106,7 @@
   /* outline: 4px auto :-webkit-focus-ring-color; */
 }
 
- /* 
+/* 
 @media (max-width: 650px) {
    .si-form-label {
       width: 100%;
@@ -105,8 +119,25 @@
     .btn-si-form {
       width: 100%;
       /* max-width: 75%;
-    } */
+    }
+} */
 
+@media (max-width: 500px) {
+  .si-form {
+    /* display: none; */
+    max-width: 340px;
+  }
+
+  /* .si-pswd-ctn, 
+  .si-usrn-ctn, 
+  .si-em-ctn {
+      display: none;
+  } */
+
+  .si-btn-form {
+    font-size: 1.1em;
+  }
+}
 
 
     

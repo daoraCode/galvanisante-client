@@ -53,39 +53,43 @@ export const Login = () => {
     <div className="main-si-form">
       <h3 className="si-heading-text-form">CONNEXION</h3>
       <form className="si-form" onSubmit={formik.handleSubmit}>
-        <label className="si-form-label" htmlFor="email">
-          Adresse e-mail
-        </label>
-        <input
-          placeholder="jonsnow@hbo.com"
-          className="si-input-form"
-          id="email"
-          name="email"
-          type="email"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div className="si-form-error-alert">{formik.errors.email}</div>
-        ) : null}
+        <div className="si-em-ctn">
+          <label className="si-form-label" htmlFor="email">
+            Adresse e-mail
+          </label>
+          <input
+            placeholder="jonsnow@hbo.com"
+            className="si-input-form"
+            id="email"
+            name="email"
+            type="email"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div className="si-form-error-alert">{formik.errors.email}</div>
+          ) : null}
+        </div>
 
-        <label className="si-form-label" htmlFor="password">
-          Mot de passe
-        </label>
-        <input
-          placeholder="************"
-          className="si-input-form"
-          id="password"
-          name="password"
-          type="password"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div className="si-form-error-alert">{formik.errors.password}</div>
-        ) : null}
+        <div className="si-pswd-ctn">
+          <label className="si-form-label" htmlFor="password">
+            Mot de passe
+          </label>
+          <input
+            placeholder="************"
+            className="si-input-form"
+            id="password"
+            name="password"
+            type="password"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <div className="si-form-error-alert">{formik.errors.password}</div>
+          ) : null}
+        </div>
 
         <button className="si-btn-form" type="submit">
           Se connecter
