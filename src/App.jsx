@@ -23,8 +23,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/memory" element={<Memory />} />
-          <Route path="/movie" element={<Movie />} />
+          <Route path="/memories" element={<Memory />} />
+          <Route path="/movies" element={<Movie />} />
         </Route>
       </Routes>
     </SubscriberContextProvider>

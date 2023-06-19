@@ -2,6 +2,9 @@
 import { useContext } from "react"
 import { useFormik } from "formik"
 
+// react-router-dom
+import { useNavigate } from 'react-router-dom'
+
 // contexts
 import { SubscriberContext } from "../../contexts/SubscriberContext"
 
@@ -15,7 +18,7 @@ export const Login = () => {
 
     // email regex pattern
     if (!values.email) {
-      errors.email = "Champs requis. Veuillez insérer une adresse e-mail."
+      errors.email = "Champs requis. Veuillez insérer votre adresse e-mail."
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
@@ -23,21 +26,47 @@ export const Login = () => {
     }
 
     if (!values.password) {
-      errors.password = "Champs requis. Veuillez définir un mot de passe."
+      errors.password = "Champs requis. Veuillez entrer votre mot de passe."
     } else if (values.password.length < 4) {
-      errors.password = "Min. 8 caractères pour définir un mot passe."
+      errors.password = "Min. 8 caractères pour entrer un mot passe."
     } else if (values.password.length > 9) {
-      errors.password = "Max. 9 caractères pour définir un mot passe."
+      errors.password = "Max. 9 caractères pour entrer un mot passe."
     } else if (!passwordRegex.test(values.password)) {
-      errors.password = "Le mot doit contenir au moins un chiffre."
+      errors.password = "Le mot de passe entré ne contient pas de chiffre."
     }
 
     return errors
   }
 
-  
+  const navigate = useNavigate()
 
-  const { setUser } = useContext(SubscriberContext)
+  const { login, setUser } = useContext(SubscriberContext)
+
+  // const login = async (values) => {
+  //   const res = await fetch(
+  //     `${import.meta.env.VITE_BACKEND_API}/api/user/auth/login`,
+  //     {
+  //       method: "post",
+  //       headers: {
+  //         "Content-type": "application/json",
+  //       },
+  //       credentials: "include",
+  //       body: JSON.stringify({
+  //         email: values.email,
+  //         password: values.password,
+  //       }),
+  //     }
+  //   )
+
+  //   if (res.status <= 400) {
+  //     throw res.statusText
+  //   } else {
+  //     console.log("Congrats, you're connected!")
+  //   }
+
+  //   const data = await res.json()
+  //   setUser(data)
+  // }
 
   const formik = useFormik({
     initialValues: {
@@ -45,9 +74,16 @@ export const Login = () => {
       password: "",
     },
     validate,
-    onSubmit: async (values) => {
-      await login(values)
-      // console.log(values.email)
+    onSubmit: async (values, { setFieldError }) => {
+      try {
+        const response = await login(values)
+        setUser(respponse)
+        console.log("Great!")
+        navigate("/memories")
+        // got to memory pages
+      } catch (error) {
+        setFieldError("submit", "Incorrect username/password")
+      }
     },
   })
 

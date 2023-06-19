@@ -7,6 +7,7 @@ import { SubscriberContext } from "../../contexts/SubscriberContext"
 
 // styles
 import "./signup.css"
+// import { useNavigate } from "react-router-dom"
 
 export const Signup = (props) => {
   const validate = (values) => {
@@ -42,6 +43,9 @@ export const Signup = (props) => {
 
     return errors
   }
+  // - - react-router-dom
+  // const navigate = useNavigate()
+  // - - react-router-dom
 
   const { user, signup } = useContext(SubscriberContext)
 
@@ -54,7 +58,7 @@ export const Signup = (props) => {
     validate,
     onSubmit: async (values) => {
       await signup(values)
-      console.log(values.email)
+      // console.log('Great, you've got an acount')
     },
   })
 

@@ -27,14 +27,15 @@ const SubscriberContextProvider = ({ children }) => {
       }
     )
 
-    const subscriber = await res.json()
+    const newSubscriber = await res.json()
 
-    if (subscriber.error) {
+    if (newSubscriber.error) {
       console.log("hello")
-      alert(subscriber.error)
+      alert(newSubscriber.error)
       return
     } else {
-      navigate("/memory")
+      // navigate("/memories")
+      console.log("Congrats, you've been registered!")
     }
 
     // if (res.status !== 200) {
@@ -44,12 +45,47 @@ const SubscriberContextProvider = ({ children }) => {
     // }
   }
 
+  const login = async (values) => {
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/login`,
+      {
+        method: "post",
+        headers: {
+          "Content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          email: values.email,
+          password: values.password,
+        }),
+      }
+    )
+
+    const subscriber = await res.json()
+
+    if (subscriber.error) {
+      console.log("hello")
+      alert(subscriber.error)
+      return
+    } else {
+      // navigate("/memories")
+      console.log("Congrats, you've been registered!")
+    }
+
+    if (res.status <= 400) {
+      throw res.statusText
+    } else {
+      console.log("Congrats, you're connected!")
+    }
+  }
+
   const value = {
     subscriber,
     setSubscriber,
     user,
     setUser,
     signup,
+    login,
     // getUser,
   }
 
