@@ -1,6 +1,9 @@
 .main-memory-ctn {
-  padding-top: 11em;
+  display: block;
+  padding-top: 20em;
   /* width: 100%; no need */
   height: 1400px;
   margin: 0 6em;
+  color: #909090;
+  font-family: "Monument-Extended-Black";
 }

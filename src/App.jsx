@@ -3,31 +3,31 @@ import React from "react"
 // router
 import { Routes, Route } from "react-router-dom"
 // context
-import { SubscriberContextProvider } from "./contexts/SubscriberContext"
+import { UserContextProvider } from "./contexts/UserContext"
 // pages
-import { Signup } from "./pages/Signup/Signup"
+import { SignUp } from "./pages/SignUp/SignUp"
 import { Movie } from "./pages/Movie/Movie"
 import { Memory } from "./pages/Memory/Memory"
 import { Login } from "./pages/Login/Login"
 
 // outlet layouts
-import { Layout } from './layouts/Layout'
+import { Layout } from "./layouts/Layout"
 
 // components
 // import { Footer } from "./components/Footer/Footer"
 
 const App = () => {
   return (
-    <SubscriberContextProvider>
+    <UserContextProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/memories" element={<Memory />} />
           <Route path="/movies" element={<Movie />} />
         </Route>
       </Routes>
-    </SubscriberContextProvider>
+    </UserContextProvider>
   )
 }
 

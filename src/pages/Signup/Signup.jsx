@@ -3,13 +3,13 @@ import { useContext } from "react"
 import { useFormik } from "formik"
 
 // contexts
-import { SubscriberContext } from "../../contexts/SubscriberContext"
+import { UserContext } from "../../contexts/UserContext"
 
 // styles
 import "./signup.css"
 // import { useNavigate } from "react-router-dom"
 
-export const Signup = (props) => {
+export const SignUp = (props) => {
   const validate = (values) => {
     const errors = {}
     let passwordRegex = /(?=.*[0-9])/
@@ -47,7 +47,7 @@ export const Signup = (props) => {
   // const navigate = useNavigate()
   // - - react-router-dom
 
-  const { user, signup } = useContext(SubscriberContext)
+  const { user, signUp } = useContext(UserContext)
 
   const formik = useFormik({
     initialValues: {
@@ -57,8 +57,8 @@ export const Signup = (props) => {
     },
     validate,
     onSubmit: async (values) => {
-      await signup(values)
-      // console.log('Great, you've got an acount')
+      await signUp(values)
+      console.log("Great, you've created an acount")
     },
   })
 

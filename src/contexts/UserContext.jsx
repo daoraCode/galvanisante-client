@@ -1,14 +1,16 @@
 // import axios from "axios"
 import { createContext, useEffect, useState } from "react"
+// react-router-dom
 import { useNavigate } from "react-router-dom"
 
-const SubscriberContext = createContext({})
+const UserContext = createContext({})
 
-const SubscriberContextProvider = ({ children }) => {
+const UserContextProvider = ({ children }) => {
   const navigate = useNavigate()
+
   const [user, setUser] = useState({})
 
-  const signup = async (values) => {
+  const signUp = async (values) => {
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_API}/api/user/auth/signup`,
       {
@@ -25,17 +27,17 @@ const SubscriberContextProvider = ({ children }) => {
       }
     )
 
-    const newSubscriber = await res.json()
+    const data = await res.json()
+    return data
 
-    if (newSubscriber.error) {
-      console.log("hello")
-      alert(newSubscriber.error)
-      return
-    } else {
-      navigate("/memories")
-      console.log("Congrats, you've been registered!")
-    }
-
+    // if (newSubscriber.error) {
+    //   console.log("hello")
+    //   alert(newSubscriber.error)
+    //   return
+    // } else {
+    //   navigate("/memories")
+    //   console.log("Congrats, you've been registered!")
+    // }
     // if (res.status !== 200) {
     //   alert("registration failed")
     // } else {
@@ -43,7 +45,7 @@ const SubscriberContextProvider = ({ children }) => {
     // }
   }
 
-  const login = async (values) => {
+  const logIn = async (values) => {
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_API}/api/user/auth/login`,
       {
@@ -59,34 +61,25 @@ const SubscriberContextProvider = ({ children }) => {
       }
     )
 
-    const subscriber = await res.json()
-
-    if (subscriber.error) {
-      console.log("hello")
-      alert(subscriber.error)
-      return
-    } else {
-      setUser(res)
-      navigate("/memories")
-      console.log("Congrats, you've been logged in!")
-    }
-
-    if (res.status <= 400) {
+    if (res.status >= 400) {
       throw res.statusText
-    } else {
-      console.log("Congrats, you're connected!")
-      alert("Congrats, you're connected!")
     }
+
+    const data = await res.json()
+    return data
   }
 
-  const logout = async () => {
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/logout`,
-      {
-        method: "post",
-      }
-    )
-  }
+  // const logOut = async () => {
+  //   const res = await fetch(
+  //     `${import.meta.env.VITE_BACKEND_API}/api/user/auth/logout`,
+  //     {
+  //       method: "post",
+  //     }
+  //   )
+
+  //   const data = res.json()
+  //   return data
+  // }
 
   const getUser = async () => {
     const res = await fetch(`${import.meta.env.VITE_BACKEND_API}/api/user/me`, {
@@ -96,26 +89,20 @@ const SubscriberContextProvider = ({ children }) => {
     setUser(data)
   }
 
-  useEffect(() => {
-    getUser()
-  }, [])
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
   const value = {
-    subscriber,
-    setSubscriber,
     user,
     setUser,
-    signup,
-    login,
-    logout,
-    getUser,
+    signUp,
+    logIn,
+    // logOut,
+    // getUser,
   }
 
-  return (
-    <SubscriberContext.Provider value={value}>
-      {children}
-    </SubscriberContext.Provider>
-  )
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
 
-export { SubscriberContext, SubscriberContextProvider }
+export { UserContext, UserContextProvider }

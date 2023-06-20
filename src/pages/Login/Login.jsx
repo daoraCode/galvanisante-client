@@ -6,7 +6,7 @@ import { useFormik } from "formik"
 import { useNavigate } from "react-router-dom"
 
 // contexts
-import { SubscriberContext } from "../../contexts/SubscriberContext"
+import { UserContext } from "../../contexts/UserContext"
 
 // styles
 import "./login.css"
@@ -42,8 +42,7 @@ export const Login = () => {
   }
 
   const navigate = useNavigate()
-
-  const { login, setUser } = useContext(SubscriberContext)
+  const { logIn, setUser } = useContext(UserContext)
 
   const formik = useFormik({
     initialValues: {
@@ -53,10 +52,9 @@ export const Login = () => {
     validate,
     onSubmit: async (values, { setFieldError }) => {
       try {
-        const res = await login(values)
-        setUser(res)
-        // got to memory pages
-        // navigate("/memories")
+        const userInfo = await logIn(values)
+        setUser(userInfo)
+        navigate("/memories")
         console.log("Great!")
       } catch (e) {
         // alert("wrong credentials")
