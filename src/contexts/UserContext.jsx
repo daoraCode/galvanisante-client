@@ -1,6 +1,4 @@
-// import axios from "axios"
 import { createContext, useEffect, useState } from "react"
-// react-router-dom
 import { useNavigate } from "react-router-dom"
 
 const UserContext = createContext({})
@@ -12,7 +10,7 @@ const UserContextProvider = ({ children }) => {
 
   const signUp = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/signup`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/signup`,
       {
         method: "post",
         headers: {
@@ -47,7 +45,7 @@ const UserContextProvider = ({ children }) => {
 
   const logIn = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/user/auth/login`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/login`,
       {
         method: "post",
         headers: {
@@ -65,26 +63,34 @@ const UserContextProvider = ({ children }) => {
       throw res.statusText
     }
 
+    // if (res.ok) {
+    //   res.json().then((user) => setUser(user))
+    // }
+
     const data = await res.json()
+    return data
+    // navigate("/home")
+  }
+
+  const logOut = async () => {
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/logout`,
+      {
+        credentials: "include",
+        method: "post",
+      }
+    )
+    const data = res.json()
     return data
   }
 
-  // const logOut = async () => {
-  //   const res = await fetch(
-  //     `${import.meta.env.VITE_BACKEND_API}/api/user/auth/logout`,
-  //     {
-  //       method: "post",
-  //     }
-  //   )
-
-  //   const data = res.json()
-  //   return data
-  // }
-
   const getUser = async () => {
-    const res = await fetch(`${import.meta.env.VITE_BACKEND_API}/api/user/me`, {
-      credentials: "include",
-    })
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_API}/api/users/me`,
+      {
+        credentials: "include",
+      }
+    )
     const data = await res.json()
     setUser(data)
   }
@@ -98,7 +104,7 @@ const UserContextProvider = ({ children }) => {
     setUser,
     signUp,
     logIn,
-    // logOut,
+    logOut,
     // getUser,
   }
 

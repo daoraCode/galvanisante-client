@@ -13,7 +13,7 @@ import "./login.css"
 
 export const Login = () => {
   // page navigation
-  const [redirect, setRedirect] = useState(false)
+  // const [redirect, setRedirect] = useState(false)
   //
   const validate = (values) => {
     const errors = {}
@@ -52,12 +52,10 @@ export const Login = () => {
     validate,
     onSubmit: async (values, { setFieldError }) => {
       try {
-        const userInfo = await logIn(values)
-        setUser(userInfo)
-        navigate("/memories")
-        console.log("Great!")
+        const response = await logIn(values)
+        setUser(response)
+        navigate("/home")
       } catch (e) {
-        // alert("wrong credentials")
         setFieldError("submit", "Mot de passe ou surnom incorrect")
       }
     },

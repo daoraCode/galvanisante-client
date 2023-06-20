@@ -1,49 +1,38 @@
 import { useContext, useEffect, useState } from "react"
-// contexts
-import { UserContext } from "../../contexts/UserContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Logo } from "../../assets/Logo"
+import { UserContext } from "../../contexts/UserContext"
 import "./header.css"
 
-import { useNavigate } from "react-router-dom"
-
 export const Header = () => {
-  const { user, setUser } = useContext(UserContext)
+  const { user, setUser, logOut } = useContext(UserContext)
+  // const [username, setUser] = useState(null)
   const navigate = useNavigate()
 
-  // endpoint that keep user info in browser and logged in session
   useEffect(() => {
-    const fetchData = async () => {
-      const data = fetch(`${import.meta.env.VITE_BACKEND_API}/api/user/me`, {
-        credentials: "include",
-      }).then((response) => {
-        response.json().then((userData) => setUser(userData))
-        console.log("21", response)
-      })
-    }
-    fetchData()
-  }, [])
-
-  function logoutUser() {
-    fetch(`${import.meta.env.VITE_BACKEND_API}/api/user/auth/logout`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`, {
       credentials: "include",
-      method: "post",
+    }).then((response) => {
+      response.json().then((userInfo) => {
+        setUser(userInfo.username)
+      })
     })
+  }, [user])
+
+  const logoutUser = async () => {
+    await logOut()
     setUser(null)
-    console.log("34: logged out succesfull")
+    navigate("/login")
   }
 
-  // console.log(userData)
-  const username = user?.username
-  console.log(username)
-  console.log(user.username)
+  // const username = user?.username
 
   return (
     <header className="header">
       <Link className="container-link_home" to="/">
         <Logo height="35px" />
       </Link>
-      {username && (
+      {!user && (
         <>
           <div className="auth-ctn">
             <Link className="auth-link" to="/create-memory">
@@ -55,7 +44,7 @@ export const Header = () => {
           </div>
         </>
       )}
-      {!username && (
+      {user && (
         <>
           <div className="auth-ctn">
             <Link className="auth-link" to="/login">

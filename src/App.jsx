@@ -9,6 +9,7 @@ import { SignUp } from "./pages/SignUp/SignUp"
 import { Movie } from "./pages/Movie/Movie"
 import { Memory } from "./pages/Memory/Memory"
 import { Login } from "./pages/Login/Login"
+import { Home } from "./pages/Home/Home"
 
 // outlet layouts
 import { Layout } from "./layouts/Layout"
@@ -21,6 +22,7 @@ const App = () => {
     <UserContextProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route exact path="/home" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/memories" element={<Memory />} />
