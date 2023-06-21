@@ -27,20 +27,6 @@ const UserContextProvider = ({ children }) => {
 
     const data = await res.json()
     return data
-
-    // if (newSubscriber.error) {
-    //   console.log("hello")
-    //   alert(newSubscriber.error)
-    //   return
-    // } else {
-    //   navigate("/memories")
-    //   console.log("Congrats, you've been registered!")
-    // }
-    // if (res.status !== 200) {
-    //   alert("registration failed")
-    // } else {
-    //   alert("registration succesful")
-    // }
   }
 
   const logIn = async (values) => {
@@ -59,17 +45,8 @@ const UserContextProvider = ({ children }) => {
       }
     )
 
-    if (res.status >= 400) {
-      throw res.statusText
-    }
-
-    // if (res.ok) {
-    //   res.json().then((user) => setUser(user))
-    // }
-
     const data = await res.json()
     return data
-    // navigate("/home")
   }
 
   const logOut = async () => {

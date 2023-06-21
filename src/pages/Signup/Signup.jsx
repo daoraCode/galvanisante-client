@@ -1,13 +1,9 @@
 // import axios from "axios"
 import { useContext } from "react"
 import { useFormik } from "formik"
-
-// contexts
 import { UserContext } from "../../contexts/UserContext"
-
-// styles
 import "./signup.css"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export const SignUp = (props) => {
   const validate = (values) => {
@@ -44,7 +40,7 @@ export const SignUp = (props) => {
     return errors
   }
   // - - react-router-dom
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   // - - react-router-dom
 
   const { user, signUp } = useContext(UserContext)
@@ -58,7 +54,7 @@ export const SignUp = (props) => {
     validate,
     onSubmit: async (values) => {
       await signUp(values)
-      console.log("Great, you've created an acount")
+      navigate("/login")
     },
   })
 

@@ -23,6 +23,7 @@ export const Header = () => {
     await logOut()
     setUser(null)
     navigate("/login")
+    window.location.reload()
   }
 
   // const username = user?.username
