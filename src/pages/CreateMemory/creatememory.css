@@ -1,6 +1,53 @@
-.main-creatememory-ctn {
+.main-c-memory-ctn {
   padding-top: 11em;
-  /* width: 100%; no need */
   height: 1400px;
   margin: 0 6em;
+  /* width: 100%; no need */
 }
+
+.heading-c-memory {
+  padding-bottom: 1em;
+}
+
+.ctn-c-memory-form {
+  margin-top: 3em;
+}
+
+
+.ctn-c-memory-theme, .ctn-c-memory-presentation, .ctn-c-memory-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 2em;
+}
+
+.label-theme, .label-presentation, .label-content {
+  font-size: 1.2em;
+  color: #ffd58d;
+  padding-bottom: 1em;
+}
+
+.input-theme[type=text], .input-presentation[type=text], .input-content[type=text] {
+  display: block;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 40px;
+  padding: 0 .77em;
+  margin: 8px auto;
+  border-radius: 3px;
+  border: 3px solid rgba(241, 241, 241, 0.648);
+  background-color: rgba(255, 254, 239, 0.494);
+  transition: border-color 0.35s;
+}
+
+.input-theme[type=text]:focus {
+  outline: none; 
+  border: 3px solid transparent;
+  border-color: #fcbea2;
+}
+
+/* 
+.btn-c-memory {
+  
+} */
