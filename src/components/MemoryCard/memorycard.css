@@ -1,0 +1,105 @@
+.memory-card-container,
+.memory-card-footer {
+  border-radius: 9px;
+  cursor: pointer;
+  
+}
+
+
+.memory-card-container {
+  padding: 4.45px;
+  background: rgba(226, 222, 222, 0.553);
+  min-height: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.memory-card-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+}
+
+.memory-card-hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2.45px;
+  height: 253px;
+}
+
+.memory-card-img {
+  flex-shrink: 0;
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  border-radius: 9px !important;
+}
+
+.memory-card-name,
+.memory-card-description {
+  padding: 1.5px auto;
+}
+
+.memory-card-name {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.memory-card-description {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.memory-card-footer-content {
+  color: rgb(72, 72, 71);
+  border: none;
+  display: inherit;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.memory-card-footer {
+  padding: 1em;
+  display: flex;
+  gap: 2.2rem;
+  justify-content: space-between;
+}
+
+
+/* css btn */
+
+.like-btn {
+  font-family: inherit;
+  padding: .55rem 1.32rem;
+  transition: all 0.25s ease-in-out;
+  background-color: #a3989992;
+  border-radius: 9px;
+  cursor: pointer;
+  z-index: 20;
+  border: none;
+  fill-rule: antiquewhite !important;
+}
+
+.like-fill-btn {
+  font-family: inherit;
+  padding: .55rem 1.32rem;
+  transition: all 0.25s ease-in-out;
+  background-color: #a3989992;
+  border-radius: 9px;
+  cursor: pointer;
+  z-index: 20;
+  border: none;
+  background-color: #c74062cd;
+}
+
+.like-fill-btn > svg > path {
+  fill-rule: inherit !important;
+}
+
+.like-btn > svg > path {
+  color: #ede2e2;
+  fill-rule: inherit;
+}
+
+.like-btn:hover {
+  color: #ede2e2;
+}

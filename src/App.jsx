@@ -1,36 +1,41 @@
 import React from "react"
-// import { Header } from "./components/Header/Header" 
+
+
 // router
-import { Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 // context
 import { UserContextProvider } from "./contexts/UserContext"
+import { MemoryContextProvider } from "./contexts/MemoryContext"
+
 // pages
 import { SignUp } from "./pages/SignUp/SignUp"
-import { Movie } from "./pages/Movie/Movie"
-import { Memory } from "./pages/Memory/Memory"
 import { Login } from "./pages/Login/Login"
-import { Home } from "./pages/Home/Home"
 import { CreateMemory } from "./pages/CreateMemory/CreateMemory"
-
-// outlet layouts
-import { Layout } from "./layouts/Layout"
+import { Home } from "./pages/Home/Home"
+// import { Movie } from "./pages/Movie/Movie"
+// import { Memory } from "./pages/Memory/Memory"
 
 // components
-// import { Footer } from "./components/Footer/Footer"
+import { Header } from "./components/Header/Header"
+
+// import { Layout } from "./layouts/Layout"
 
 const App = () => {
   return (
-    <UserContextProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/memories" element={<Memory />} />
-          <Route path="/create-memory" element={<CreateMemory />} />
-        </Route>
-      </Routes>
-    </UserContextProvider>
+    <BrowserRouter>
+      <UserContextProvider>
+        <MemoryContextProvider>
+          <Header />
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-memory" element={<CreateMemory />} />
+          </Routes>
+        </MemoryContextProvider>
+      </UserContextProvider>
+    </BrowserRouter>
   )
 }
 
