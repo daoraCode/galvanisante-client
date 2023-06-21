@@ -1,12 +1,13 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { MemoryContext } from "../../contexts/MemoryContext"
+import "./memorycard.css"
 
-export const MemoryCard = ({ theme, presentation, content }) => {
+export const MemoryCard = ({ memory }) => {
   return (
     <div className="memory-card-container">
-      <p>{theme}</p>
-      <p>{presentation}</p>
-      <p>{content}</p>
+      <p>{memory.theme}</p>
+      {/* <p>{memories.presentation}</p> */}
+      {/* <p>{memories.content}</p> */}
     </div>
   )
 }

@@ -1,12 +1,21 @@
-.memory-card-container,
-.memory-card-footer {
+.memory-card-container {
+  width: 200px;
+  height: 200px;
   border-radius: 9px;
   cursor: pointer;
-  
+  background-color: antiquewhite;
+  color: black;
+  margin: 5px auto;
+}
+
+p {
+  text-align: center;
+  font-size: 5px;
+  color: black;
 }
 
 
-.memory-card-container {
+/* .memory-card-container {
   padding: 4.45px;
   background: rgba(226, 222, 222, 0.553);
   min-height: auto;
@@ -65,8 +74,6 @@
 }
 
 
-/* css btn */
-
 .like-btn {
   font-family: inherit;
   padding: .55rem 1.32rem;
@@ -102,4 +109,4 @@
 
 .like-btn:hover {
   color: #ede2e2;
-}
+} */

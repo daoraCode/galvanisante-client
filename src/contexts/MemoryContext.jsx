@@ -18,12 +18,7 @@ const MemoryContextProvider = ({ children }) => {
         },
       }
     )
-
-    // useEffect(() => {}, [])
     const data = await res.json()
-
-    console.log(data)
-    // return data
     setMemories(data.memoryList)
   }
 
