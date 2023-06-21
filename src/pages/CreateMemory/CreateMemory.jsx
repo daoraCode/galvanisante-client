@@ -1,14 +1,16 @@
 import { useState } from "react"
 import { useFormik } from "formik"
+import { getTokenFromCookie } from "../../helpers/cookies"
 import "./creatememory.css"
 
 // form to create a memory
 
 export const CreateMemory = () => {
   // endpoint create a memory comiing from backend API
-  const urlMemory = "http://localhost:4004/api/memories/memory/create"
-  const token = sessionStorage.setItem("token")
-  // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTI4MGUzM2ViNmM2NjU1ZjNiNDhiYSIsImlhdCI6MTY4NzMzOTA3MCwiZXhwIjoxNjg3MzQwNDcwfQ.5WpiGaoaxZnYoLU4lLGv_jvghQhBgbuhctGPbL9ktaw"
+  const urlMemory = `${
+    import.meta.env.VITE_BACKEND_API
+  }/api/memories/memory/create`
+  const token = getTokenFromCookie() // <-- retrive token user from helpers universal-cookie that help us to link memory to user
 
   const formik = useFormik({
     initialValues: {
@@ -21,11 +23,10 @@ export const CreateMemory = () => {
       console.log(values)
       const fetchedCreateMemory = await fetch(urlMemory, {
         method: "post",
-
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${token}`, // <-- user's token from cookie his session
-        },
+          Authorization: `Bearer ${token}`, // <-- user's token from cookie session related to the actual logged user.
+        }, // The token is needed in order to perform own memorie
         body: JSON.stringify({
           theme: values.theme,
           presentation: values.presentation,

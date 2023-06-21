@@ -1,0 +1,9 @@
+.memory-grid-ctn {
+  display: grid;
+  width: 100%;
+  gap: 1.7rem;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  grid-template-rows: repeat(auto-fill, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+}
