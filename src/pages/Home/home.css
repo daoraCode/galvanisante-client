@@ -1,15 +1,78 @@
-.main-home-ctn {
+.hm-ctn {
   display: block;
-  padding-top: 5em;
-  /* width: 100%; no need */
-  height: 1100px;
-  font-size: 3em;
-  margin: 0 6em;
+  padding-top: 9em;
+  width: 100%;
+  height: 900px;
+  font-size: 1.7em;
   color: #909090;
-  font-family: "Monument-Extended-Black";
+  font-family: "Monument-Extended-Black"; 
+  /* !! */
+  /* width: 100%; no need */
+  /* margin: 0 6em; */
 }
 
-p {
-  font-size: 1em;
-  color: antiquewhite;
+/* .a-itm-fl-srt {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: start;
+  align-items: flex-start;
+} */
+
+.mry-crd-grid-ctn {
+  width: 100%;
+}
+
+.css-01-mry {
+  -ms-flex-align: stretch;
+  -ms-flex-direction: column;
+  -ms-flex-negative: 0;
+  -ms-flex-preferred-size: auto;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-basis: auto;
+  -webkit-flex-direction: column;
+  -webkit-flex-shrink: 0;
+  align-items: stretch;
+  border: 0 solid black;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 0px;
+  min-width: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  position: relative;
+  z-index: 0;
+}
+
+.grd-mry-crd {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .grd-mry-crd {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 32px;
+  }
 }

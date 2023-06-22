@@ -54,7 +54,7 @@ export const Login = () => {
       try {
         const response = await logIn(values)
         setUser(response)
-        navigate("/home")
+        navigate("/") // <-- index page
       } catch (e) {
         setFieldError("submit", "Mot de passe ou surnom incorrect")
       }
