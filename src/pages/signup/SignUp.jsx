@@ -2,9 +2,9 @@ import { useContext } from 'react'
 import { useFormik } from 'formik'
 import { UserContext } from '../../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
-import './register.css'
+import './signup.css'
 
-export const Register = (props) => {
+export const SignUp = (props) => {
   const validate = (values) => {
     const errors = {}
     let passwordRegex = /(?=.*[0-9])/

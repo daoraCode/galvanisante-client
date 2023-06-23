@@ -1,15 +1,14 @@
-// import axios from "axios"
-import { useContext, useState } from "react"
-import { useFormik } from "formik"
+import { useContext, useState } from 'react'
+import { useFormik } from 'formik'
 
 // react-router-dom
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 // contexts
-import { UserContext } from "../../contexts/UserContext"
+import { UserContext } from '../../contexts/UserContext'
 
 // styles
-import "./login.css"
+import './login.css'
 
 export const Login = () => {
   // page navigation
@@ -21,21 +20,21 @@ export const Login = () => {
 
     // email regex pattern
     if (!values.email) {
-      errors.email = "Champs requis. Veuillez insérer votre adresse e-mail."
+      errors.email = 'Champs requis. Veuillez insérer votre adresse e-mail.'
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      errors.email = "Adresse e-mail invalide."
+      errors.email = 'Adresse e-mail invalide.'
     }
 
     if (!values.password) {
-      errors.password = "Champs requis. Veuillez entrer votre mot de passe."
+      errors.password = 'Champs requis. Veuillez entrer votre mot de passe.'
     } else if (values.password.length < 4) {
-      errors.password = "Min. 8 caractères pour entrer un mot passe."
+      errors.password = 'Min. 8 caractères pour entrer un mot passe.'
     } else if (values.password.length > 9) {
-      errors.password = "Max. 9 caractères pour entrer un mot passe."
+      errors.password = 'Max. 9 caractères pour entrer un mot passe.'
     } else if (!passwordRegex.test(values.password)) {
-      errors.password = "Le mot de passe entré ne contient pas de chiffre."
+      errors.password = 'Le mot de passe entré ne contient pas de chiffre.'
     }
 
     return errors
@@ -46,17 +45,17 @@ export const Login = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validate,
     onSubmit: async (values, { setFieldError }) => {
       try {
         const response = await logIn(values)
         setUser(response)
-        navigate("/") // <-- index page
+        navigate('/') // <-- index page
       } catch (e) {
-        setFieldError("submit", "Mot de passe ou surnom incorrect")
+        setFieldError('submit', 'Mot de passe ou surnom incorrect')
       }
     },
   })
