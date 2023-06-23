@@ -1,9 +1,8 @@
-// import axios from "axios"
 import { useContext } from "react"
 import { useFormik } from "formik"
 import { UserContext } from "../../contexts/UserContext"
-import "./signup.css"
 import { useNavigate } from "react-router-dom"
+import "./signup.css"
 
 export const SignUp = (props) => {
   const validate = (values) => {
