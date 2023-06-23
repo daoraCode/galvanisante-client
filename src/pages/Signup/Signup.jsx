@@ -1,8 +1,8 @@
-import { useContext } from "react"
-import { useFormik } from "formik"
-import { UserContext } from "../../contexts/UserContext"
-import { useNavigate } from "react-router-dom"
-import "./signup.css"
+import { useContext } from 'react'
+import { useFormik } from 'formik'
+import { UserContext } from '../../contexts/UserContext'
+import { useNavigate } from 'react-router-dom'
+import './signup.css'
 
 export const SignUp = (props) => {
   const validate = (values) => {
@@ -10,30 +10,30 @@ export const SignUp = (props) => {
     let passwordRegex = /(?=.*[0-9])/
 
     if (!values.username) {
-      errors.username = "Champs requis. Veuillez insérer un surnom."
+      errors.username = 'Champs requis. Veuillez insérer un surnom.'
     } else if (values.username.length < 4) {
-      errors.username = "Min. 4 caractères pour définir un surnom."
+      errors.username = 'Min. 4 caractères pour définir un surnom.'
     } else if (values.username.length > 10) {
-      errors.username = "Maximum 10 caractères ou moins est requis."
+      errors.username = 'Maximum 10 caractères ou moins est requis.'
     }
 
     // email regex pattern
     if (!values.email) {
-      errors.email = "Champs requis. Veuillez insérer une adresse e-mail."
+      errors.email = 'Champs requis. Veuillez insérer une adresse e-mail.'
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      errors.email = "Adresse e-mail invalide."
+      errors.email = 'Adresse e-mail invalide.'
     }
 
     if (!values.password) {
-      errors.password = "Champs requis. Veuillez définir un mot de passe."
+      errors.password = 'Champs requis. Veuillez définir un mot de passe.'
     } else if (values.password.length < 4) {
-      errors.password = "Min. 8 caractères pour définir un mot passe."
+      errors.password = 'Min. 8 caractères pour définir un mot passe.'
     } else if (values.password.length > 9) {
-      errors.password = "Max. 9 caractères pour définir un mot passe."
+      errors.password = 'Max. 9 caractères pour définir un mot passe.'
     } else if (!passwordRegex.test(values.password)) {
-      errors.password = "Le mot doit contenir au moins un chiffre."
+      errors.password = 'Le mot doit contenir au moins un chiffre.'
     }
 
     return errors
@@ -46,14 +46,14 @@ export const SignUp = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
     },
     validate,
     onSubmit: async (values) => {
       await signUp(values)
-      navigate("/login")
+      navigate('/login')
     },
   })
 

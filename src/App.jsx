@@ -1,19 +1,19 @@
-import React from "react"
+import React from 'react'
 
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { UserContextProvider } from "./contexts/UserContext"
-import { MemoryContextProvider } from "./contexts/MemoryContext"
+import { UserContextProvider } from './contexts/UserContext'
+import { MemoryContextProvider } from './contexts/MemoryContext'
 
-import { SignUp } from "./pages/SignUp/SignUp"
-import { Login } from "./pages/Login/Login"
-import { CreateMemory } from "./pages/CreateMemory/CreateMemory"
-import { Home } from "./pages/Home/Home"
+import { SignUp } from './pages/SignUp/SignUp'
+import { Login } from './pages/Login/Login'
+import { CreateMemory } from './pages/CreateMemory/CreateMemory'
+import { Home } from './pages/Home/Home'
 // import { Movie } from "./pages/Movie/Movie"
 // import { Memory } from "./pages/Memory/Memory"
 
 // components
-import { Header } from "./components/Header/Header"
+import { Header } from './components/Header/Header'
 
 // import { Layout } from "./layouts/Layout"
 
