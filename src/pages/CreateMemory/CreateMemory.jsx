@@ -41,7 +41,7 @@ export const CreateMemory = () => {
       <h1 className="heading-c-memory">Souvenirs</h1>
       <div className="ctn">
         {/* <h3>CRÉER VOTRE SOUVENIRS DE FILMS</h3> */}
-        <form onSubmit={formik.handleSubmit} enctype="multipart/form-data">
+        <form onSubmit={formik.handleSubmit} encType="multipart/form-data">
           <div className="ctn-c-memory-theme">
             <label className="label-theme">
               Thème de votre souvenir de film / scène préférée ⚡️
