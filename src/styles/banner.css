@@ -1,5 +1,5 @@
-.banner {
-  position: fixed; /* !important */
+/* .banner {
+  position: fixed;
   width: 100%;
 	background-size: 500% 500%;
   height: 300px;
@@ -10,4 +10,4 @@
   background: url('../../public/banner-header.png') 100%;
   background-size: cover;  
   z-index: 100 !important;
-}
+} */
