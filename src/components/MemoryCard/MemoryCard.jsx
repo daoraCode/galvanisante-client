@@ -7,9 +7,7 @@ export const MemoryCard = ({ memory }) => {
     <div className="mry-crd-ctn jst-ct-ctr a-itm-ctr">
       <p className="mry-p-theme">{memory.theme}</p>
       <p className="mry-p-content">{memory.content}</p>
-      {/* <img
-        src={`${import.meta.env.VITE_BACKEND_API}/api/${memory.presentation}`}
-      /> */}
+      <img src={`${import.meta.env.VITE_BACKEND_API}/${memory.cover}`} />
     </div>
   )
 }
