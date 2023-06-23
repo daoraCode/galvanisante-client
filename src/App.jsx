@@ -1,14 +1,10 @@
 import React from "react"
 
-
-// router
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-// context
 import { UserContextProvider } from "./contexts/UserContext"
 import { MemoryContextProvider } from "./contexts/MemoryContext"
 
-// pages
 import { SignUp } from "./pages/SignUp/SignUp"
 import { Login } from "./pages/Login/Login"
 import { CreateMemory } from "./pages/CreateMemory/CreateMemory"
