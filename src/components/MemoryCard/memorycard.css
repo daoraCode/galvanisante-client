@@ -5,7 +5,7 @@
   cursor: pointer;
   background-color: antiquewhite;
   color: black;
-  margin: 5px auto;
+  margin: 5px 16px;
 }
 
 p {
@@ -123,3 +123,15 @@ p {
 .like-btn:hover {
   color: #ede2e2;
 } */
+
+
+.mry-p-theme {
+  font-size: 1.2em;
+  color: #000;
+}
+
+.mry-p-content {
+  font-size: 12px;
+  text-align: center;
+  color: salmon;
+}

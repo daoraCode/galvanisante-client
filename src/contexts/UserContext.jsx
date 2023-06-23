@@ -10,7 +10,7 @@ const UserContextProvider = ({ children }) => {
 
   const signUp = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/signup`,
+      `${import.meta.env.VITE_BACKEND_API}/users/auth/signup`,
       {
         method: "post",
         headers: {
@@ -31,7 +31,7 @@ const UserContextProvider = ({ children }) => {
 
   const logIn = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/login`,
+      `${import.meta.env.VITE_BACKEND_API}/users/auth/login`,
       {
         method: "post",
         headers: {
@@ -51,7 +51,7 @@ const UserContextProvider = ({ children }) => {
 
   const logOut = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/logout`,
+      `${import.meta.env.VITE_BACKEND_API}/users/auth/logout`,
       {
         credentials: "include",
         method: "post",
@@ -63,7 +63,7 @@ const UserContextProvider = ({ children }) => {
 
   const getUser = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/users/me`,
+      `${import.meta.env.VITE_BACKEND_API}/users/auth/me`,
       {
         credentials: "include",
       }

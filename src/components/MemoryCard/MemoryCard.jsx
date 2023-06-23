@@ -5,9 +5,11 @@ import "./memorycard.css"
 export const MemoryCard = ({ memory }) => {
   return (
     <div className="mry-crd-ctn jst-ct-ctr a-itm-ctr">
-      <p>{memory.theme}</p>
-      {/* <p>{memories.presentation}</p> */}
-      {/* <p>{memories.content}</p> */}
+      <p className="mry-p-theme">{memory.theme}</p>
+      <p className="mry-p-content">{memory.content}</p>
+      {/* <img
+        src={`${import.meta.env.VITE_BACKEND_API}/api/${memory.presentation}`}
+      /> */}
     </div>
   )
 }

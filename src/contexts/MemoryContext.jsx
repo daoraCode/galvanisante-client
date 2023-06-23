@@ -9,17 +9,18 @@ const MemoryContextProvider = ({ children }) => {
 
   const fetchMemoryFeed = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/memories/memory`,
+      `${import.meta.env.VITE_BACKEND_API}/memories/memory`,
       {
         credentials: "include",
         headers: {
-          "Content-type": "application/json",
+          // "Content-type": "application/json",
+          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         },
       }
     )
     const data = await res.json()
-    setMemories(data.memoryList)
+    setMemories(data.memoriesList)
   }
 
   useEffect(() => {

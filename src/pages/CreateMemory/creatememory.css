@@ -1,6 +1,6 @@
 .main-c-memory-ctn {
   padding-top: 11em;
-  height: 1400px;
+  height: 1200px;
   margin: 0 6em;
   /* width: 100%; no need */
 }
@@ -13,6 +13,16 @@
   margin-top: 3em;
 }
 
+.cr-mry-btn {
+  cursor: pointer;
+  all: unset;
+  background-color: #ffd58d;
+  font-size: 24px;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  padding: .59em 2.72em;
+}
 
 .ctn-c-memory-theme, .ctn-c-memory-presentation, .ctn-c-memory-content {
   display: flex;

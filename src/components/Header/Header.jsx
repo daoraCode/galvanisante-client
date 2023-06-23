@@ -10,7 +10,7 @@ export const Header = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API}/users/auth/me`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {

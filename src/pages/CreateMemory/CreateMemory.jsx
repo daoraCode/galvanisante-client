@@ -10,12 +10,12 @@ export const CreateMemory = () => {
   const urlMemory = `${
     import.meta.env.VITE_BACKEND_API
   }/api/memories/memory/create`
-  const token = getTokenFromCookie() // <-- retrive token user from helpers universal-cookie that help us to link memory to user
+  const token = getTokenFromCookie() // <-- retreive token user from helpers universal-cookie that help us to link memory to user
 
   const formik = useFormik({
     initialValues: {
       theme: "",
-      presention: "",
+      presention: null,
       content: "",
     },
     // validate,
@@ -26,7 +26,7 @@ export const CreateMemory = () => {
         headers: {
           "Content-type": "application/json",
           Authorization: `Bearer ${token}`, // <-- user's token from cookie session related to the actual logged user.
-        }, // The token is needed in order to perform own memorie
+        }, // token is needed in order to perform own memorie
         body: JSON.stringify({
           theme: values.theme,
           presentation: values.presentation,
@@ -36,15 +36,12 @@ export const CreateMemory = () => {
     },
   })
 
-  // const [memory, setMemory] = useState({
-  // })
-
   return (
     <main className="main-c-memory-ctn">
       <h1 className="heading-c-memory">Souvenirs</h1>
       <div className="ctn">
         {/* <h3>CRÉER VOTRE SOUVENIRS DE FILMS</h3> */}
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} enctype="multipart/form-data">
           <div className="ctn-c-memory-theme">
             <label className="label-theme">
               Thème de votre souvenir de film / scène préférée ⚡️
@@ -61,15 +58,19 @@ export const CreateMemory = () => {
 
           <div className="ctn-c-memory-presentation">
             <label className="label-presentation">
-              Insérer une image de présentation de votre souvenir 🌈
+              Insérer un mot une phrase de culte d'une série ou film de votre
+              souvenir 🌈
             </label>
             <input
               className="input-presentation"
               placeholder="Image de souvenir..."
               id="presentation"
               name="presentation"
-              type="text"
+              type="file"
               onChange={formik.handleChange}
+              // onChange={(e) => {
+              //   setFieldValue("image", event.currentTarget.files[0])
+              // }}
             />
           </div>
 
@@ -87,7 +88,9 @@ export const CreateMemory = () => {
             />
           </div>
 
-          <button type="submit">Créer</button>
+          <button className="cr-mry-btn" type="submit">
+            Créer
+          </button>
         </form>
       </div>
     </main>
