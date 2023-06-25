@@ -10,8 +10,8 @@ export const Header = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API}/users/auth/me`, {
-      credentials: "include",
+    fetch(`${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`, {
+      credentials: 'include',
     }).then((response) => {
       response.json().then((userInfo) => {
         setUser(userInfo.username)
@@ -22,7 +22,7 @@ export const Header = () => {
   const logoutUser = async () => {
     await logOut()
     setUser(null)
-    navigate("/login")
+    navigate('/login')
     window.location.reload()
   }
 
@@ -37,7 +37,7 @@ export const Header = () => {
         <>
           <div className="auth-ctn">
             <Link className="auth-link" to="/create-memory">
-              <span>Créer un nouveau souvenir</span>
+              <span>Créer un souvenir</span>
             </Link>
             <Link onClick={logoutUser} className="auth-link">
               <span>Se déconnecter</span>

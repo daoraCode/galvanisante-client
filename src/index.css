@@ -84,12 +84,12 @@ img {
 
 body {
   background: url('/banner-header.png') center no-repeat;
-  background-position-y: 5em;
+  background-position-y: -11.5em;
   background-size: contain;  
-  text-size-adjust: 100%;
   background-color: #1b1b1b;
   -webkit-text-size-adjust: 100%;   
   color: #fff;
+  text-size-adjust: 100%;
   font-family: 'Sohne-Breit-Dreiviertelfett';
 }
 

@@ -6,8 +6,8 @@
   display: flex;
   top: 0;
   left: 0;
-  background-color: #ffe7a415;
-  backdrop-filter: blur(52px);
+  background-color: #00000015;
+  backdrop-filter: blur(20px);
   position: fixed;
   align-items: center;
   -ms-flex-pack: justify;
@@ -53,7 +53,7 @@
     padding: 10px 45px;
   }
   .auth-link {
-    padding: inherit;
+    /* padding: inherit; */
   }
   .auth-link>span {
     font-size: 15px;

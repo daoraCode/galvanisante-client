@@ -10,7 +10,7 @@ export const CreateMemory = () => {
   const [cover, setCover] = useState('')
   const [content, setContent] = useState('')
 
-  const url = `${import.meta.env.VITE_BACKEND_API}/memories/memory/create`
+  const url = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/create`
   const token = getTokenFromCookie()
 
   const createNewMemory = async (e) => {
@@ -53,7 +53,7 @@ export const CreateMemory = () => {
 
           <div className="ctn-c-memory-cover">
             <label className="label-cover">
-              Insérer un mot une phrase de culte d'une série ou film de votre
+              Insérer un mot, une phrase culte d'une série ou d'un film de votre
               souvenir 🌈
             </label>
             <input

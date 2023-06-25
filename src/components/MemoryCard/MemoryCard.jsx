@@ -1,13 +1,19 @@
-import { useContext } from "react"
-// import { MemoryContext } from "../../contexts/MemoryContext"
-import "./memorycard.css"
+import { useContext } from 'react'
+import './memorycard.css'
+import { Link } from 'react-router-dom'
 
 export const MemoryCard = ({ memory }) => {
   return (
     <div className="mry-crd-ctn jst-ct-ctr a-itm-ctr">
-      <p className="mry-p-theme">{memory.theme}</p>
-      <p className="mry-p-content">{memory.content}</p>
-      <img src={`${import.meta.env.VITE_BACKEND_API}/${memory.cover}`} />
+      <div className="mry-text-ctn">
+        <p className="mry-p-theme">{memory.theme}</p>
+      </div>
+      <Link to={`/memory/${memory._id}`}>
+        <img
+          className="mry-img-cover"
+          src={`${import.meta.env.VITE_BACKEND_API}/${memory.cover}`}
+        />
+      </Link>
     </div>
   )
 }

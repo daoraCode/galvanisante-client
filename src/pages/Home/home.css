@@ -3,12 +3,13 @@
   padding-top: 9em;
   font-size: 1.7em;
   color: #909090;
-  font-family: "Monument-Extended-Black"; 
-  /* // */
   width: 100%;
   height: 1150px;
 }
 
+.mry-crd-grid-ctn {
+  width: 100%;
+}
 /* .a-itm-fl-srt {
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -16,9 +17,7 @@
   align-items: flex-start;
 } */
 
-.mry-crd-grid-ctn {
-  width: 100%;
-}
+
 
 /* .css-01-mry {
   -ms-flex-align: stretch;
@@ -68,10 +67,41 @@
   padding-right: 16px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .grd-mry-crd {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-column-gap: 16px;
     grid-row-gap: 32px;
   }
+} */
+
+.grd-mry-crd {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-column-gap: 16px;
+  grid-row-gap: 32px;
+  width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+  .grd-mry-crd {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      grid-column-gap: 16px;
+      grid-row-gap: 32px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .grd-mry-crd {
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      grid-column-gap: 32px;
+      grid-row-gap: 48px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .grd-mry-crd {
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+}
+

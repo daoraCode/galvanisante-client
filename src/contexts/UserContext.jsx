@@ -10,13 +10,13 @@ const UserContextProvider = ({ children }) => {
 
   const signUp = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/users/auth/signup`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/signup`,
       {
-        method: "post",
+        method: 'post',
         headers: {
-          "Content-type": "application/json",
+          'Content-type': 'application/json',
         },
-        credentials: "include",
+        credentials: 'include',
         body: JSON.stringify({
           username: values.username,
           email: values.email,
@@ -31,13 +31,13 @@ const UserContextProvider = ({ children }) => {
 
   const logIn = async (values) => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/users/auth/login`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/login`,
       {
-        method: "post",
+        method: 'post',
         headers: {
-          "Content-type": "application/json",
+          'Content-type': 'application/json',
         },
-        credentials: "include",
+        credentials: 'include',
         body: JSON.stringify({
           email: values.email,
           password: values.password,
@@ -51,10 +51,10 @@ const UserContextProvider = ({ children }) => {
 
   const logOut = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/users/auth/logout`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/logout`,
       {
-        credentials: "include",
-        method: "post",
+        credentials: 'include',
+        method: 'post',
       }
     )
     const data = res.json()
@@ -63,9 +63,9 @@ const UserContextProvider = ({ children }) => {
 
   const getUser = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/users/auth/me`,
+      `${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`,
       {
-        credentials: "include",
+        credentials: 'include',
       }
     )
     const data = await res.json()

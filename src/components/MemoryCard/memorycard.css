@@ -1,17 +1,39 @@
 .mry-crd-ctn {
-  width: 445.50px;
-  height: 247.78px;
-  border-radius: 7px;
+  width: 400px;
+  height: 225px;
   cursor: pointer;
-  background-color: antiquewhite;
+  background: #ffdf94;
+  backdrop-filter: blur(55px);
   color: black;
-  margin: 5px 16px;
+  overflow: auto;
+  border: solid #ffdf94 2.6px;
+  border-radius: 1.4px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-p {
+.mry-crd-ctn:hover {
+  transition: all .2s ease-in;
+  border: solid #ffe099e4 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.93) 0px 19px 38px, rgba(0, 0, 0, 0.92) 0px 15px 12px;
+}
+
+.mry-text-ctn {
+  padding: 7.2px;
+}
+
+
+.mry-p-theme {
   text-align: center;
-  font-size: 12px;
-  color: black;
+  font-size: 15px;
+  color: #1b1b1b;
+  font-family: 'Monument-Extended-Black';
+  font-weight: 300;
+  padding-bottom: 2px;
+}
+
+.mry-img-cover {
+  min-width: 100%;
 }
 
 .jst-ct-ctr {
@@ -26,6 +48,12 @@ p {
   -webkit-align-items: center;
   -webkit-box-align: center;
   align-items: center;
+}
+
+.mry-p-content {
+  font-size: 12px;
+  text-align: center;
+  color:#ffffff;
 }
 
 /* .memory-card-container {
@@ -124,14 +152,9 @@ p {
   color: #ede2e2;
 } */
 
-
-.mry-p-theme {
-  font-size: 1.2em;
-  color: #000;
-}
-
-.mry-p-content {
-  font-size: 12px;
-  text-align: center;
-  color: salmon;
+@media screen and (max-width: 500.01px) {
+  .mry-crd-ctn {
+    width: 90vw;
+    height: 390px;
+  }
 }

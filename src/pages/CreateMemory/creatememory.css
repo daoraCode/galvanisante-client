@@ -1,8 +1,7 @@
 .main-c-memory-ctn {
   padding-top: 11em;
   height: 1200px;
-  margin: 0 6em;
-  /* width: 100%; no need */
+  margin: 0 2em;
 }
 
 .heading-c-memory {
@@ -33,14 +32,14 @@
 
 .label-theme, .label-cover, .label-content {
   font-size: 1.2em;
-  color: #ffd58d;
+  color: #ffffff;
   padding-bottom: 1em;
 }
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
   display: block;
   width: 100%;
-  font-family: sans-serif;
+  font-family: inherit;
   font-size: 14px;
   height: 40px;
   padding: 0 .77em;
@@ -51,10 +50,10 @@
   transition: border-color 0.35s;
 }
 
-.input-theme[type=text]:focus {
+.input-theme[type=text]:focus, .input-cover[type=text]:focus, .input-content[type=text]:focus  {
   outline: none; 
   border: 3px solid transparent;
-  border-color: #fcbea2;
+  border-color: #ff2d7680;
 }
 
 /* 

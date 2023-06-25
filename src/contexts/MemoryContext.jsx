@@ -9,12 +9,12 @@ const MemoryContextProvider = ({ children }) => {
 
   const fetchMemoryFeed = async () => {
     const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/memories/memory`,
+      `${import.meta.env.VITE_BACKEND_API}/api/memories/memory`,
       {
-        credentials: "include",
+        credentials: 'include',
         headers: {
           // "Content-type": "application/json",
-          "Content-Type": "multipart/form-data",
+          'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,
         },
       }
