@@ -24,20 +24,20 @@
   padding: .59em 2.72em;
 }
 
-.ctn-c-memory-theme, .ctn-c-memory-presentation, .ctn-c-memory-content {
+.ctn-c-memory-theme, .ctn-c-memory-cover, .ctn-c-memory-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 2em;
 }
 
-.label-theme, .label-presentation, .label-content {
+.label-theme, .label-cover, .label-content {
   font-size: 1.2em;
   color: #ffd58d;
   padding-bottom: 1em;
 }
 
-.input-theme[type=text], .input-presentation[type=text], .input-content[type=text] {
+.input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
   display: block;
   width: 100%;
   font-family: sans-serif;

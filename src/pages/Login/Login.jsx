@@ -1,19 +1,10 @@
-import { useContext, useState } from "react"
-import { useFormik } from "formik"
-
-// react-router-dom
+import { useContext, useState } from 'react'
+import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
-
-// contexts
 import { UserContext } from '../../contexts/UserContext'
-
-// styles
 import './login.css'
 
 export const Login = () => {
-  // page navigation
-  // const [redirect, setRedirect] = useState(false)
-  //
   const validate = (values) => {
     const errors = {}
     let passwordRegex = /(?=.*[0-9])/
