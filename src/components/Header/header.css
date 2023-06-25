@@ -1,18 +1,20 @@
 .header {
   width: 100%;
+  padding: 10px 15px;
   position: fixed;
-  height: 75px;
+  height: auto;
   display: flex;
   top: 0;
   left: 0;
-  background-color: #1b1b1b28;
-  backdrop-filter: blur(9px);
+  background-color: #ffe7a415;
+  backdrop-filter: blur(52px);
   position: fixed;
   align-items: center;
   -ms-flex-pack: justify;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  z-index: 6;
 }
 
 .container-link_home {
@@ -26,23 +28,35 @@
 }
 
 .auth-link {
-  padding: 20px;
-  font-size: 14px;
+  padding: 2em;
   font-weight: 500;
   color: #fff;
   text-align: center;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  transition: all .77s ease;
+  color: #fbd58e;
+}
+
+.auth-link>span {
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 600px) {
   .header {
-    padding: .55em;
     flex-direction: column;
   }
-  
   .auth-ctn {
     display: flex;
-    padding-bottom: .95em;
-    justify-content: center;
-    flex-direction: column;
+    padding: 10px 45px;
+  }
+  .auth-link {
+    padding: inherit;
+  }
+  .auth-link>span {
+    font-size: 15px;
+    white-space: nowrap;
   }
 }

@@ -1,8 +1,10 @@
 .main-su-form {
-  padding-top: 5em;
+  padding-top: 15em;
   display: block;
   height: inherit;
-  margin: 0 auto;
+  margin: auto;
+  height: 1100px;
+  z-index: 1;
   /* align-items: center; */
   /* flex-direction: column; */
   /* justify-content: center; */
@@ -37,7 +39,7 @@
   text-align: center;
   display: block;
   padding: 1.5em auto;
-  margin: 4em 0 3em 0;
+  margin-bottom: 4em;
 }
 
 .su-input-form::placeholder {
@@ -90,31 +92,26 @@
   margin: 40px auto;
   transition: border-color 0.35s;
   background-color:#ffd064;
+  color: #1b1b1b;
 }
 
 .su-btn-form:hover {
+  transition: all .4s ease-in-out;
   border-color: #c7ac6e;
+  color: #1b1b1b84;
 }
 
 .su-btn-form:focus,
 .su-btn-form:focus-visible {
   outline: 3.5px auto #c7ac6e;
-  /* outline: 4px auto :-webkit-focus-ring-color; */
 }
 
 
 @media (max-width: 500px) {
   .su-form {
-    /* display: none; */
-    max-width: 340px;
+    width: 100%;
+    max-width: 80vw;
   }
-
-  /* .su-pswd-ctn, 
-  .su-usrn-ctn, 
-  .su-em-ctn {
-      display: none;
-  } */
-
   .su-btn-form {
     font-size: 1.1em;
   }

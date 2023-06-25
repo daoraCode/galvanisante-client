@@ -3,11 +3,7 @@ import { getTokenFromCookie } from '../../helpers/cookies'
 import './creatememory.css'
 import { useNavigate } from 'react-router-dom'
 
-// form to create a memory
-
 export const CreateMemory = () => {
-  // endpoint create a memory comiing from backend API
-
   const navigate = useNavigate()
 
   const [theme, setTheme] = useState('')
@@ -40,7 +36,6 @@ export const CreateMemory = () => {
     <main className="main-c-memory-ctn">
       <h1 className="heading-c-memory">Souvenirs</h1>
       <div className="ctn">
-        {/* <h3>CRÉER VOTRE SOUVENIRS DE FILMS</h3> */}
         <form onSubmit={createNewMemory}>
           <div className="ctn-c-memory-theme">
             <label className="label-theme">

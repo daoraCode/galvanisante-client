@@ -1,9 +1,10 @@
 .main-si-form {
-  padding-top: 5em;
+  padding-top: 15em;
   display: block;
   height: inherit;
-  margin: 0 auto;
+  margin: auto;
   height: 1100px;
+  z-index: 1;
   /* padding-top: 14em;
   display: flex;
   justify-content: center;
@@ -42,7 +43,7 @@
   text-align: center;
   display: block;
   padding: 1.5em auto;
-  margin: 4em 0 3em 0;
+  margin-bottom: 4em;
 
 }
 
@@ -88,7 +89,7 @@
   text-align: center;
   border-radius: 3px;
   border: 3.5px solid transparent;
-  height: 40px;
+  height: 50px;
   font-size: 1.3em;
   font-weight: 500;
   font-family: inherit;
@@ -96,46 +97,25 @@
   margin: 40px auto;
   transition: border-color 0.35s;
   background-color:#ffd064;
+  color: #1b1b1b;
 }
 
 .si-btn-form:hover {
+  transition: all .4s ease-in-out;
   border-color: #c7ac6e;
+  color: #1b1b1b84;
 }
 
 .si-btn-form:focus,
 .si-btn-form:focus-visible {
   outline: 3.5px auto #c7ac6e;
-  /* outline: 4px auto :-webkit-focus-ring-color; */
 }
-
-/* 
-@media (max-width: 650px) {
-   .si-form-label {
-      width: 100%;
-      max-width: fit-content;
-    }
-    .input-si-form {
-      width: 100%;
-      padding: 0 2em;
-    }
-    .btn-si-form {
-      width: 100%;
-      /* max-width: 75%;
-    }
-} */
 
 @media (max-width: 500px) {
   .si-form {
-    /* display: none; */
-    max-width: 340px;
+    width: 100%;
+    max-width: 80vw;
   }
-
-  /* .si-pswd-ctn, 
-  .si-usrn-ctn, 
-  .si-em-ctn {
-      display: none;
-  } */
-
   .si-btn-form {
     font-size: 1.1em;
   }

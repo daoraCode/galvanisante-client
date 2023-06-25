@@ -53,8 +53,8 @@ export const Login = () => {
 
   return (
     <div className="main-si-form">
-      <h3 className="si-heading-text-form">CONNEXION</h3>
       <form className="si-form" onSubmit={formik.handleSubmit}>
+        <h3 className="si-heading-text-form">CONNEXION</h3>
         <div className="si-em-ctn">
           <label className="si-form-label" htmlFor="email">
             Adresse e-mail

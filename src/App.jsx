@@ -9,13 +9,6 @@ import { SignUp } from './pages/signup/SignUp'
 import { Login } from './pages/login/Login'
 import { CreateMemory } from './pages/creatememory/CreateMemory'
 import { Home } from './pages/home/Home'
-
-// pages
-import { SignUp } from "./pages/signup/SignUp"
-import { Login } from "./pages/login/Login"
-import { CreateMemory } from "./pages/createMemory/CreateMemory"
-import { Home } from './pages/Home/Home'
-
 import { Header } from "./components/Header/Header"
 
 const App = () => {

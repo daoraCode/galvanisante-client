@@ -59,8 +59,8 @@ export const SignUp = (props) => {
 
   return (
     <div className="main-su-form">
-      <h3 className="su-heading-text-form">INSCRIPTION</h3>
       <form className="su-form" onSubmit={formik.handleSubmit}>
+        <h3 className="su-heading-text-form">INSCRIPTION</h3>
         <div className="su-usrn-ctn">
           <label className="su-form-label" htmlFor="username">
             Surnom
