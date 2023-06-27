@@ -16,18 +16,18 @@ import { Header } from "./components/Header/Header"
 const App = () => {
   return (
     <BrowserRouter>
-      <UserContextProvider>
-        <MemoryContextProvider>
+      <MemoryContextProvider>
+        <UserContextProvider>
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/memory/:memoryId" element={<Memory />} />
+            <Route path="/memory/:id" element={<Memory />} />
             <Route path="/create-memory" element={<CreateMemory />} />
           </Routes>
-        </MemoryContextProvider>
-      </UserContextProvider>
+        </UserContextProvider>
+      </MemoryContextProvider>
     </BrowserRouter>
   )
 }

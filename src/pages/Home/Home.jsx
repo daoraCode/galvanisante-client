@@ -6,7 +6,7 @@ import "./home.css"
 export const Home = () => {
   const { memories } = useContext(MemoryContext)
 
-  console.log(memories)
+  console.log('9, home', memories)
 
   return (
     <div className="hm-ctn">

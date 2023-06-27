@@ -1,27 +1,28 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getTokenFromCookie } from "../../helpers/cookies"
-import "./memory.css"
+import { UserContext } from '../../contexts/UserContext'
+import './memory.css'
 
 export const Memory = () => {
+  const { getUser } = useContext(UserContext)
+  // const { user, setUser, logOut } = useContext(UserContext)
+  const { id } = useParams()
   const token = getTokenFromCookie()
   const navigate = useNavigate()
-  const { memoryId } = useParams()
   const [memoryInfo, setMemoryInfo] = useState([])
+  const [userInfo, setUserInfo] = useState({})
 
   const urlDelete = `${
     import.meta.env.VITE_BACKEND_API
-  }/api/memories/memory/delete/${memoryId}`
+  }/api/memories/memory/delete/${id}`
 
   useEffect(() => {
-    const url = `${
-      import.meta.env.VITE_BACKEND_API
-    }/api/memories/memory/${memoryId}`
-
+    const url = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/${id}`
     const fetchMemory = async () => {
       try {
         const res = await fetch(url, {
-          credentials: "include",
+          credentials: 'include',
           headers: {
             // 'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
@@ -30,22 +31,24 @@ export const Memory = () => {
         const json = await res.json()
         setMemoryInfo(json.memory)
       } catch (err) {
-        console.log("error", err)
+        console.log('error', err)
       }
     }
     fetchMemory()
   }, [])
 
+  // console.log('39', user)
+
   const deleteMemory = async () => {
     await fetch(urlDelete, {
-      method: "delete",
-      credentials: "include",
+      method: 'delete',
+      credentials: 'include',
       headers: {
         // 'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
     })
-    navigate("/")
+    navigate('/')
     window.location.reload()
   }
 
@@ -63,6 +66,7 @@ export const Memory = () => {
         <button className="mry-dlt-btn" onClick={deleteMemory}>
           Supprimer
         </button>
+        {/* {user.id === id && <p>Hello</p>} */}
       </div>
     </div>
   )

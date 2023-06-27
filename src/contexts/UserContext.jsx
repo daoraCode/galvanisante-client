@@ -7,6 +7,7 @@ const UserContextProvider = ({ children }) => {
   const navigate = useNavigate()
 
   const [user, setUser] = useState({})
+  // const [user, setUser] = useState(null)
 
   const signUp = async (values) => {
     const res = await fetch(
@@ -68,13 +69,15 @@ const UserContextProvider = ({ children }) => {
         credentials: 'include',
       }
     )
+
     const data = await res.json()
-    setUser(data)
+    return data
+    // setUser(data.profile)
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   const value = {
     user,
@@ -82,10 +85,16 @@ const UserContextProvider = ({ children }) => {
     signUp,
     logIn,
     logOut,
-    // getUser,
+    getUser,
   }
 
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>
+  return (
+    <UserContext.Provider
+      value={{ user, setUser, signUp, logIn, logOut, getUser }}
+    >
+      {children}
+    </UserContext.Provider>
+  )
 }
 
 export { UserContext, UserContextProvider }

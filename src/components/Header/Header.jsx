@@ -6,7 +6,6 @@ import "./header.css"
 
 export const Header = () => {
   const { user, setUser, logOut } = useContext(UserContext)
-  // const [username, setUser] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -18,7 +17,7 @@ export const Header = () => {
       })
     })
   }, [user])
-
+     
   const logoutUser = async () => {
     await logOut()
     setUser(null)

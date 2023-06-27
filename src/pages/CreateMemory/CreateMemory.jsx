@@ -1,34 +1,34 @@
-import { useState } from "react"
-import { getTokenFromCookie } from "../../helpers/cookies"
-import "./creatememory.css"
-import { useNavigate } from "react-router-dom"
+import { useState } from 'react'
+import { getTokenFromCookie } from '../../helpers/cookies'
+import './creatememory.css'
+import { useNavigate } from 'react-router-dom'
 
 export const CreateMemory = () => {
   const navigate = useNavigate()
 
-  const [theme, setTheme] = useState("")
-  const [cover, setCover] = useState("")
-  const [content, setContent] = useState("")
+  const [theme, setTheme] = useState('')
+  const [cover, setCover] = useState('')
+  const [content, setContent] = useState('')
 
   const url = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/create`
   const token = getTokenFromCookie()
 
   const createNewMemory = async (e) => {
     let formData = new FormData()
-    formData.set("theme", theme)
-    formData.set("cover", cover[0])
-    formData.set("content", content)
+    formData.set('theme', theme)
+    formData.set('cover', cover[0])
+    formData.set('content', content)
     e.preventDefault()
     const response = await fetch(url, {
-      method: "post",
-      credentials: "include",
+      method: 'post',
+      credentials: 'include',
       headers: {
         Authorization: `Bearer ${token}`,
       },
       body: formData,
     })
     if (response.ok) {
-      navigate("/")
+      navigate('/')
     }
   }
 
