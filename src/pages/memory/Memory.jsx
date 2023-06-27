@@ -51,15 +51,15 @@ export const Memory = () => {
 
   return (
     <div className="mry-dtl-ctn">
-      <h2 className="mry-dlt-heading">{memoryInfo.theme}</h2>
       <div className="mry-dlt-img-ctn">
+        <h2 className="mry-dlt-heading">{memoryInfo.theme}</h2>
         <img
           className="mry-dtl-img"
           src={`${import.meta.env.VITE_BACKEND_API}/${memoryInfo.cover}`}
         />
       </div>
-      <div className="mry-dlt-content">{memoryInfo.content}</div>
-      <div className="mry-flex-flex">
+      <div className="mry-ftr-ctn">
+        <div className="mry-dlt-content">{memoryInfo.content}</div>
         <button className="mry-dlt-btn" onClick={deleteMemory}>
           Supprimer
         </button>

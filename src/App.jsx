@@ -25,7 +25,6 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/memory/:memoryId" element={<Memory />} />
             <Route path="/create-memory" element={<CreateMemory />} />
-            <Route path="/update-memory/:memoryId" element={<UpdateMemory />} />
           </Routes>
         </MemoryContextProvider>
       </UserContextProvider>

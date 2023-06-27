@@ -16,7 +16,7 @@
   cursor: pointer;
   all: unset;
   background-color: #ffd58d;
-  font-size: 24px;
+  font-size: 15px;
   text-align: center;
   color: black;
   border-radius: 5px;
@@ -55,8 +55,3 @@
   border: 3px solid transparent;
   border-color: #ff2d7680;
 }
-
-/* 
-.btn-c-memory {
-  
-} */
