@@ -38,12 +38,12 @@
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
   display: block;
-  width: 100%;
+  width: 80vw;
   font-family: inherit;
   font-size: 14px;
   height: 40px;
   padding: 0 .77em;
-  margin: 8px auto;
+  margin: 27px 0;
   border-radius: 3px;
   border: 3px solid rgba(241, 241, 241, 0.648);
   background-color: rgba(255, 254, 239, 0.494);

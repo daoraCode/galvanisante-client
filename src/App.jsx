@@ -8,10 +8,10 @@ import { MemoryContextProvider } from './contexts/MemoryContext'
 import { SignUp } from './pages/signup/SignUp'
 import { Login } from './pages/login/Login'
 import { CreateMemory } from './pages/creatememory/CreateMemory'
-import { Memory } from './pages/memory/Memory'
+import { Memory } from "./pages/memory/Memory"
 
-import { Home } from './pages/home/Home'
-import { Header } from './components/Header/Header'
+import { Home } from "./pages/home/Home"
+import { Header } from "./components/Header/Header"
 
 const App = () => {
   return (
@@ -25,6 +25,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/memory/:memoryId" element={<Memory />} />
             <Route path="/create-memory" element={<CreateMemory />} />
+            <Route path="/update-memory/:memoryId" element={<UpdateMemory />} />
           </Routes>
         </MemoryContextProvider>
       </UserContextProvider>

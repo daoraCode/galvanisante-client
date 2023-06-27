@@ -1,49 +1,49 @@
-import { useState } from 'react'
-import { getTokenFromCookie } from '../../helpers/cookies'
-import './creatememory.css'
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react"
+import { getTokenFromCookie } from "../../helpers/cookies"
+import "./creatememory.css"
+import { useNavigate } from "react-router-dom"
 
 export const CreateMemory = () => {
   const navigate = useNavigate()
 
-  const [theme, setTheme] = useState('')
-  const [cover, setCover] = useState('')
-  const [content, setContent] = useState('')
+  const [theme, setTheme] = useState("")
+  const [cover, setCover] = useState("")
+  const [content, setContent] = useState("")
 
   const url = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/create`
   const token = getTokenFromCookie()
 
   const createNewMemory = async (e) => {
     let formData = new FormData()
-    formData.set('theme', theme)
-    formData.set('cover', cover[0])
-    formData.set('content', content)
+    formData.set("theme", theme)
+    formData.set("cover", cover[0])
+    formData.set("content", content)
     e.preventDefault()
     const response = await fetch(url, {
-      method: 'post',
+      method: "post",
+      credentials: "include",
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      credentials: 'include',
       body: formData,
     })
     if (response.ok) {
-      navigate('/')
+      navigate("/")
     }
   }
 
   return (
     <main className="main-c-memory-ctn">
-      <h1 className="heading-c-memory">Souvenirs</h1>
+      <h3 className="heading-c-memory">CRÉATION DU SOUVENIR</h3>
       <div className="ctn">
         <form onSubmit={createNewMemory}>
           <div className="ctn-c-memory-theme">
             <label className="label-theme">
-              Thème de votre souvenir de film / scène préférée ⚡️
+              Thème de votre souvenir d'une scène préférée ⚡️
             </label>
             <input
               className="input-theme"
-              placeholder="Le thème / le titre de souvenir..."
+              placeholder="Thème titre du souvenir..."
               id="theme"
               name="theme"
               type="text"
@@ -53,12 +53,11 @@ export const CreateMemory = () => {
 
           <div className="ctn-c-memory-cover">
             <label className="label-cover">
-              Insérer un mot, une phrase culte d'une série ou d'un film de votre
-              souvenir 🌈
+              Insérer une <i>cover</i> représentative de votre souvenir 🌈
             </label>
             <input
               className="input-cover"
-              placeholder="Image du souvenir..."
+              placeholder="Photo du souvenir..."
               id="cover"
               name="cover"
               type="file"
@@ -72,7 +71,7 @@ export const CreateMemory = () => {
             </label>
             <input
               className="input-content"
-              placeholder="Mon souvenir à décrire..."
+              placeholder="Souvenir à décrire..."
               id="content"
               name="content"
               type="text"

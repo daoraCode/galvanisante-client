@@ -1,7 +1,7 @@
-import { useContext } from 'react'
-import { MemoryContext } from '../../contexts/MemoryContext'
-import { MemoryCard } from '../../components/MemoryCard/MemoryCard'
-import './home.css'
+import { useContext } from "react"
+import { MemoryContext } from "../../contexts/MemoryContext"
+import { MemoryCard } from "../../components/MemoryCard/MemoryCard"
+import "./home.css"
 
 export const Home = () => {
   const { memories } = useContext(MemoryContext)

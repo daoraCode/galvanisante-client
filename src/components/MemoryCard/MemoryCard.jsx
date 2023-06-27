@@ -1,6 +1,6 @@
-import { useContext } from 'react'
-import './memorycard.css'
-import { Link } from 'react-router-dom'
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import "./memorycard.css";
 
 export const MemoryCard = ({ memory }) => {
   return (
@@ -15,5 +15,5 @@ export const MemoryCard = ({ memory }) => {
         />
       </Link>
     </div>
-  )
-}
+  );
+};

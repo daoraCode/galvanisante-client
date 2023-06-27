@@ -5,9 +5,11 @@ const MemoryContext = createContext({})
 
 const MemoryContextProvider = ({ children }) => {
   const token = getTokenFromCookie()
-  const [memories, setMemories] = useState([])
 
-  const fetchMemoryFeed = async () => {
+  const [memories, setMemories] = useState([])
+  // const [memory, setMemory] = useState(null)
+
+  const fetchMemoriesFeed = async () => {
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_API}/api/memories/memory`,
       {
@@ -23,14 +25,35 @@ const MemoryContextProvider = ({ children }) => {
     setMemories(data.memoriesList)
   }
 
+  // const fetchMemory = async (id) => {
+  //   const res = fetch(
+  //     `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/${id}`,
+  //     {
+  //       credentials: 'include',
+  //       headers: {
+  //         // 'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     }
+  //   )
+  //   // console.log(res)
+  //   const data = await res.json()
+  //   return data
+  //   // setMemory(data.memory)
+  // }
+
   useEffect(() => {
-    fetchMemoryFeed()
+    fetchMemoriesFeed()
+    // fetchMemory()
   }, [])
 
   const value = {
     memories,
     setMemories,
-    fetchMemoryFeed,
+    fetchMemoriesFeed,
+    // memory,
+    // setMemory,
+    // fetchMemory,
   }
 
   return (
