@@ -1,26 +1,27 @@
 import { createContext, useEffect, useState } from "react"
 import { getTokenFromCookie } from "../helpers/cookies"
+import { useParams } from 'react-router-dom'
 
-const MemoryContext = createContext({})
+export const MemoryContext = createContext({})
 
-const MemoryContextProvider = ({ children }) => {
-  const token = getTokenFromCookie()
-
+export const MemoryContextProvider = ({ children }) => {
   const [memories, setMemories] = useState([])
-  // const [memory, setMemory] = useState(null)
+  const token = getTokenFromCookie()
+  const urlMemories = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory`
+
+  useEffect(() => {
+    fetchMemoriesFeed()
+    // fetchMemory()
+  }, [])
 
   const fetchMemoriesFeed = async () => {
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_API}/api/memories/memory`,
-      {
-        credentials: 'include',
-        headers: {
-          // "Content-type": "application/json",
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    )
+    const res = await fetch(urlMemories, {
+      credentials: 'include',
+      headers: {
+        // 'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+      },
+    })
     const data = await res.json()
     setMemories(data.memoriesList)
   }
@@ -42,11 +43,6 @@ const MemoryContextProvider = ({ children }) => {
   //   // setMemory(data.memory)
   // }
 
-  useEffect(() => {
-    fetchMemoriesFeed()
-    // fetchMemory()
-  }, [])
-
   const value = {
     memories,
     setMemories,
@@ -60,5 +56,3 @@ const MemoryContextProvider = ({ children }) => {
     <MemoryContext.Provider value={value}>{children}</MemoryContext.Provider>
   )
 }
-
-export { MemoryContext, MemoryContextProvider }

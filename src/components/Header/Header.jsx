@@ -7,17 +7,18 @@ import "./header.css"
 export const Header = () => {
   const { user, setUser, logOut } = useContext(UserContext)
   const navigate = useNavigate()
+  const urlProfile = `${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`, {
+    fetch(urlProfile, {
       credentials: 'include',
-    }).then((response) => {
-      response.json().then((userInfo) => {
-        setUser(userInfo.username)
+    }).then((res) => {
+      res.json().then((userData) => {
+        setUser(userData.username)
       })
     })
-  }, [user])
-     
+  }, [])
+
   const logoutUser = async () => {
     await logOut()
     setUser(null)
@@ -32,7 +33,7 @@ export const Header = () => {
       <Link className="container-link_home" to="/">
         <Logo height="35px" />
       </Link>
-      {!user && (
+      {user && (
         <>
           <div className="auth-ctn">
             <Link className="auth-link" to="/create-memory">
@@ -44,7 +45,7 @@ export const Header = () => {
           </div>
         </>
       )}
-      {user && (
+      {!user && (
         <>
           <div className="auth-ctn">
             <Link className="auth-link" to="/login">

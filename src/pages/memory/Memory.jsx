@@ -1,32 +1,31 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getTokenFromCookie } from "../../helpers/cookies"
+// import { MemoryContext } from '../../contexts/MemoryContext'
 import { UserContext } from '../../contexts/UserContext'
 import './memory.css'
 
 export const Memory = () => {
-  const { getUser } = useContext(UserContext)
-  // const { user, setUser, logOut } = useContext(UserContext)
+  const { user } = useContext(UserContext)
   const { id } = useParams()
   const token = getTokenFromCookie()
   const navigate = useNavigate()
   const [memoryInfo, setMemoryInfo] = useState([])
-  const [userInfo, setUserInfo] = useState({})
 
-  const urlDelete = `${
+  const urlGetMemory = `${
+    import.meta.env.VITE_BACKEND_API
+  }/api/memories/memory/${id}`
+
+  const urlRemoveMemory = `${
     import.meta.env.VITE_BACKEND_API
   }/api/memories/memory/delete/${id}`
 
   useEffect(() => {
-    const url = `${import.meta.env.VITE_BACKEND_API}/api/memories/memory/${id}`
     const fetchMemory = async () => {
       try {
-        const res = await fetch(url, {
+        const res = await fetch(urlGetMemory, {
           credentials: 'include',
-          headers: {
-            // 'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         })
         const json = await res.json()
         setMemoryInfo(json.memory)
@@ -37,10 +36,8 @@ export const Memory = () => {
     fetchMemory()
   }, [])
 
-  // console.log('39', user)
-
   const deleteMemory = async () => {
-    await fetch(urlDelete, {
+    await fetch(urlRemoveMemory, {
       method: 'delete',
       credentials: 'include',
       headers: {
@@ -52,6 +49,8 @@ export const Memory = () => {
     window.location.reload()
   }
 
+  if (memoryInfo == null) return ''
+
   return (
     <div className="mry-dtl-ctn">
       <div className="mry-dlt-img-ctn">
@@ -61,6 +60,7 @@ export const Memory = () => {
           src={`${import.meta.env.VITE_BACKEND_API}/${memoryInfo.cover}`}
         />
       </div>
+      {userId.id}
       <div className="mry-ftr-ctn">
         <div className="mry-dlt-content">{memoryInfo.content}</div>
         <button className="mry-dlt-btn" onClick={deleteMemory}>

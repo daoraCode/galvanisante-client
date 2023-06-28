@@ -10,10 +10,11 @@ export const MemoryCard = ({ memory }) => {
       </div>
       <Link to={`/memory/${memory._id}`}>
         <img
+          loading="lazy"
           className="mry-img-cover"
           src={`${import.meta.env.VITE_BACKEND_API}/${memory.cover}`}
         />
       </Link>
     </div>
-  );
+  )
 };
