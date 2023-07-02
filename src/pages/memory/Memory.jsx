@@ -52,8 +52,9 @@ export const Memory = () => {
   }
 
   if (memoryInfo == null) return ''
+  if (user == null) return ''
 
-  console.log(id)
+  console.log('memory id', id)
   console.log('creator', memoryInfo.creator)
   console.log('user', user.id)
 
@@ -67,13 +68,13 @@ export const Memory = () => {
         />
       </div>
       <div className="mry-ftr-ctn">
-        <div className="mry-dlt-content">{memoryInfo.content}</div>
+        <div className="mry-content">{memoryInfo.content}</div>
         {user.id === memoryInfo.creator && (
           <div className="mry-btn-ctn">
-            <button className="mry-dlt-btn" onClick={deleteMemory}>
+            <button className="mry-upd-btn">Éditer</button>
+            <button className="mry-rmv-btn" onClick={deleteMemory}>
               Supprimer
             </button>
-            <button className="mry-upd-btn">Éditer</button>
           </div>
         )}
       </div>

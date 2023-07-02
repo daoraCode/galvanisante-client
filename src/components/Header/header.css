@@ -30,18 +30,18 @@
 .auth-link {
   padding: 2em;
   font-weight: 500;
-  color: #fff;
   text-align: center;
   text-decoration: none;
 }
 
-.auth-link:hover {
-  transition: all .77s ease;
-  color: #fbd58e;
+.auth-link > span {
+  color: #fff;
+  font-size: 18px;
 }
 
-.auth-link>span {
-    font-size: 18px;
+.auth-link:hover > span {
+  transition: all .2s ease;
+  color: #ffffff9e;
 }
 
 @media only screen and (max-width: 750px) {

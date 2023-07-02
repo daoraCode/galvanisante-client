@@ -2,7 +2,7 @@
   width: 400px;
   height: 225px;
   cursor: pointer;
-  background: #ffefca;
+  background: #ffefc7;
   backdrop-filter: blur(55px);
   color: black;
   overflow: auto;
@@ -22,7 +22,6 @@
   padding: 7.2px;
 }
 
-
 .mry-p-theme {
   text-align: center;
   font-size: 15px;
@@ -30,6 +29,7 @@
   font-family: inherit;
   font-weight: 300;
   padding-bottom: 2px;
+  text-transform: uppercase;
 }
 
 .mry-img-cover {

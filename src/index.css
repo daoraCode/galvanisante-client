@@ -91,17 +91,19 @@ body {
   background: url('/banner-header.png') center no-repeat;
   background-position-y: -3.5em;
   background-size: contain;  
-  background-color: #2d2d2d;
+  background-color: #5c5765;
   -webkit-text-size-adjust: 100%;   
   color: #fff;
   text-size-adjust: 100%;
   font-family: 'Sohne-Breit-Dreiviertelfett';
 }
 
-/* banner in mobile version */
-/* @media screen { */
-  /* background-position-y: -11.45em; */
-/* } */
+
+@media (max-width: 500px) {
+  body {
+    background-position-y: 7.5em;
+  }
+}
 
 h1 {
   font-size: 3.2em;

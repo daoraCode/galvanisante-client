@@ -6,6 +6,7 @@
 
 .heading-c-memory {
   padding-bottom: 1em;
+  color: #ffd58d;
 }
 
 .ctn-c-memory-form {
@@ -13,7 +14,7 @@
 }
 
 .cr-mry-btn {
-  cursor: pointer;
+  cursor: pointer !important;
   all: unset;
   background-color: #ffd58d;
   font-size: 15px;
@@ -21,32 +22,37 @@
   color: black;
   border-radius: 5px;
   padding: .59em 2.72em;
+  transition: all .3s ease;
+}
+
+.cr-mry-btn:hover {
+  color: rgba(0, 0, 0, 0.473);
 }
 
 .ctn-c-memory-theme, .ctn-c-memory-cover, .ctn-c-memory-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 2em;
+  margin-bottom: 2.7em;
 }
 
 .label-theme, .label-cover, .label-content {
   font-size: 1.2em;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 1em;
 }
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
-  color: #fff;
+  /* color: #fff; */
   display: block;
   width: 80vw;
   font-family: inherit;
   font-size: 14px;
   height: 40px;
   padding: 0 .77em;
-  margin: 27px 0;
+  margin: 11px 0;
   border-radius: 3px;
-  border: 3px solid rgba(241, 241, 241, 0.648);
+  border: 3px solid #1b1b1b79;
   background-color: rgba(255, 254, 239, 0.494);
   transition: border-color 0.35s;
 }
