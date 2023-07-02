@@ -37,6 +37,7 @@
 }
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
+  color: #fff;
   display: block;
   width: 80vw;
   font-family: inherit;

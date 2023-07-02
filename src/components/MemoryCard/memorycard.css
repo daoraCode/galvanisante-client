@@ -2,20 +2,20 @@
   width: 400px;
   height: 225px;
   cursor: pointer;
-  background: #ffdf94;
+  background: #ffefca;
   backdrop-filter: blur(55px);
   color: black;
   overflow: auto;
-  border: solid #ffdf94 2.6px;
+  border: solid #ffefca 0;
   border-radius: 1.4px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
 .mry-crd-ctn:hover {
-  transition: all .2s ease-in;
-  border: solid #ffe099e4 2.6px;
-  box-shadow: rgba(0, 0, 0, 0.93) 0px 19px 38px, rgba(0, 0, 0, 0.92) 0px 15px 12px;
+  transition: all .2s ease-out;
+  /* border: solid #ffefcae4 0; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 
 .mry-text-ctn {
@@ -27,7 +27,7 @@
   text-align: center;
   font-size: 15px;
   color: #1b1b1b;
-  font-family: 'Monument-Extended-Black';
+  font-family: inherit;
   font-weight: 300;
   padding-bottom: 2px;
 }

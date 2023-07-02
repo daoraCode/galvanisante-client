@@ -39,12 +39,12 @@
 }
 
 .si-heading-text-form {
-  font-size: 1.6em;
+  color: #fff;
+  font-size: 1.95em;
   text-align: center;
   display: block;
   padding: 1.5em auto;
-  margin-bottom: 4em;
-
+  margin-bottom: 2em;
 }
 
 .si-input-form::placeholder {

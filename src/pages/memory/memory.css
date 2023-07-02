@@ -21,10 +21,6 @@
 }
 
 .mry-dlt-img-ctn {
-  /* no need - made responsive img */
-  /* min-width: 700px; */
-  /* padding: 10px; */
-  /* ! */
   height: 555.75px;
 }
 
@@ -49,7 +45,26 @@
   font-size: 15px;
 }
 
+.mry-upd-btn {
+  all: unset;
+  cursor: pointer !important;
+  background-color: #ffd58d;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  padding: .59em 2.72em;
+  display: block;
+  font-size: 15px;
+}
+
 .mry-ftr-ctn {
   display: block;
   margin-top: 14em;
+}
+
+.mry-btn-ctn {
+  display: flex;
+  justify-content: center;
+  padding-top: 4em;
+  gap: 4em;
 }

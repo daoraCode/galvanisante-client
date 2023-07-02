@@ -5,13 +5,14 @@ import { Routes, Route } from 'react-router-dom'
 import { UserContextProvider } from './contexts/UserContext'
 import { MemoryContextProvider } from './contexts/MemoryContext'
 
+import { Header } from './components/Header/Header'
+
+import { Home } from './pages/home/Home'
 import { SignUp } from './pages/signup/SignUp'
 import { Login } from './pages/login/Login'
 import { CreateMemory } from './pages/creatememory/CreateMemory'
 import { Memory } from './pages/memory/Memory'
 
-import { Home } from './pages/home/Home'
-import { Header } from './components/Header/Header'
 
 const App = () => {
   return (

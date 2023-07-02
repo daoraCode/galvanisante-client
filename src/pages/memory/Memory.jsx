@@ -36,6 +36,8 @@ export const Memory = () => {
     fetchMemory()
   }, [])
 
+  // const editMemory = async () => {}
+
   const deleteMemory = async () => {
     await fetch(urlRemoveMemory, {
       method: 'delete',
@@ -51,6 +53,10 @@ export const Memory = () => {
 
   if (memoryInfo == null) return ''
 
+  console.log(id)
+  console.log('creator', memoryInfo.creator)
+  console.log('user', user.id)
+
   return (
     <div className="mry-dtl-ctn">
       <div className="mry-dlt-img-ctn">
@@ -60,13 +66,16 @@ export const Memory = () => {
           src={`${import.meta.env.VITE_BACKEND_API}/${memoryInfo.cover}`}
         />
       </div>
-      {userId.id}
       <div className="mry-ftr-ctn">
         <div className="mry-dlt-content">{memoryInfo.content}</div>
-        <button className="mry-dlt-btn" onClick={deleteMemory}>
-          Supprimer
-        </button>
-        {/* {user.id === id && <p>Hello</p>} */}
+        {user.id === memoryInfo.creator && (
+          <div className="mry-btn-ctn">
+            <button className="mry-dlt-btn" onClick={deleteMemory}>
+              Supprimer
+            </button>
+            <button className="mry-upd-btn">Éditer</button>
+          </div>
+        )}
       </div>
     </div>
   )

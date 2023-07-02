@@ -89,9 +89,9 @@ img {
 
 body {
   background: url('/banner-header.png') center no-repeat;
-  background-position-y: -11.5em;
+  background-position-y: -3.5em;
   background-size: contain;  
-  background-color: #1b1b1b;
+  background-color: #2d2d2d;
   -webkit-text-size-adjust: 100%;   
   color: #fff;
   text-size-adjust: 100%;

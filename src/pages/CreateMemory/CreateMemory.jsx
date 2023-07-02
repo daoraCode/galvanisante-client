@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { getTokenFromCookie } from '../../helpers/cookies'
-import './creatememory.css'
 import { useNavigate } from 'react-router-dom'
+import './creatememory.css'
 
 export const CreateMemory = () => {
   const navigate = useNavigate()
@@ -43,14 +43,13 @@ export const CreateMemory = () => {
             </label>
             <input
               className="input-theme"
-              placeholder="Thème titre du souvenir..."
+              placeholder="Thème du souvenir..."
               id="theme"
               name="theme"
               type="text"
               onChange={(e) => setTheme(e.target.value)}
             />
           </div>
-
           <div className="ctn-c-memory-cover">
             <label className="label-cover">
               Insérer une <i>cover</i> représentative de votre souvenir 🌈
@@ -64,7 +63,6 @@ export const CreateMemory = () => {
               onChange={(e) => setCover(e.target.files)}
             />
           </div>
-
           <div className="ctn-c-memory-content">
             <label className="label-content">
               Décrivez votre souvenir à partager ✍🏼
