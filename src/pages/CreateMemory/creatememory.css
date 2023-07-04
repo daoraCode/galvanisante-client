@@ -39,7 +39,7 @@
 .label-theme, .label-cover, .label-content {
   font-size: 1.2em;
   color: #fff;
-  padding-bottom: 1em;
+  padding-bottom: 10px;
 }
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {
@@ -50,7 +50,7 @@
   font-size: 14px;
   height: 40px;
   padding: 0 .77em;
-  margin: 11px 0;
+  margin: 7px 0;
   border-radius: 3px;
   border: 3px solid #1b1b1b79;
   background-color: rgba(255, 254, 239, 0.494);
@@ -58,7 +58,19 @@
 }
 
 .input-theme[type=text]:focus, .input-cover[type=text]:focus, .input-content[type=text]:focus  {
+  background-color: rgba(255, 254, 239, 0.744);
   outline: none; 
   border: 3px solid transparent;
   border-color: #ff2d7680;
+}
+
+
+
+@media (max-width: 500px) {
+  .heading-c-memory {
+    font-size: 23px;
+  }
+  .label-theme, .label-cover, .label-content  {
+    font-size: 14px;
+  }
 }

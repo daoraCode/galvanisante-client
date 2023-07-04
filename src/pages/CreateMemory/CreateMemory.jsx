@@ -29,6 +29,7 @@ export const CreateMemory = () => {
     })
     if (response.ok) {
       navigate('/')
+      window.location.reload()
     }
   }
 
@@ -39,7 +40,7 @@ export const CreateMemory = () => {
         <form onSubmit={createNewMemory}>
           <div className="ctn-c-memory-theme">
             <label className="label-theme">
-              Thème de votre souvenir d'une scène préférée ⚡️
+              Thème du souvenir d'une scène appréciée ⚡️
             </label>
             <input
               className="input-theme"
@@ -52,7 +53,7 @@ export const CreateMemory = () => {
           </div>
           <div className="ctn-c-memory-cover">
             <label className="label-cover">
-              Insérer une <i>cover</i> représentative de votre souvenir 🌈
+              Insérer une cover iconique pour illustrer le souvenir 🌈
             </label>
             <input
               className="input-cover"
@@ -65,7 +66,7 @@ export const CreateMemory = () => {
           </div>
           <div className="ctn-c-memory-content">
             <label className="label-content">
-              Décrivez votre souvenir à partager ✍🏼
+              Décrivez le souvenir à partager ✍🏼
             </label>
             <input
               className="input-content"

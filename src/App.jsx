@@ -25,6 +25,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/memory/:id" element={<Memory />} />
           <Route path="/create-memory" element={<CreateMemory />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </UserContextProvider>
     </MemoryContextProvider>

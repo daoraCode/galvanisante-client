@@ -48,9 +48,13 @@
   transition: all .4s ease;
 }
 
+.mry-rmv-btn:hover, .mry-upd-btn:hover{
+  color: rgba(0, 0, 0, 0.4);
+}
+
 .mry-ftr-ctn {
   display: block;
-  margin-top: 14em;
+  margin-top: 7em;
 }
 
 .mry-btn-ctn {
@@ -58,10 +62,6 @@
   justify-content: center;
   padding-top: 4em;
   gap: 4em;
-}
-
-.mry-dlt-btn:hover, .mry-upd-btn:hover{
-  color: rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 390px) {
