@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react'
 import { useFormik } from 'formik'
-import * as Yup from 'yup'
+// import * as Yup from 'yup'
 import { UserContext } from '../../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
 import './signup.css'
@@ -13,30 +13,31 @@ export const SignUp = (props) => {
 
   const navigate = useNavigate()
 
-  const formik = useFormik({
-    initialValues: {
-      username: '',
-      email: '',
-      password: '',
-    },
-    validationSchema: Yup.object().shape({
-      username: Yup.string()
-        .min(4, 'Min. 4 caractères pour définir un surnom.')
-        .max(10, 'Min. 10 caractères pour définir un surnom.')
-        .required('Champs requis. Veuillez définir votre surnom.'),
-      email: Yup.string()
-        .email('Adresse e-mail invalide.')
-        .required('Champs requis. Veuillez définir votre adresse e-mail.'),
-      password: Yup.string()
-        .min(8, 'Min. 8 caractères pour définir votre mot passe.')
-        .max(13, 'Min. 13 caractères pour définir votre mot passe.')
-        .required('Champs requis. Veuillez définir un mot de passe'),
-    }),
-    onSubmit: async (values) => {
-      await signUp(values)
-      navigate('/login')
-    },
-  })
+// const formik = useFormik({
+//   initialValues: {
+//     username: '',
+//     email: '',
+//     password: '',
+//   },
+//   validationSchema: Yup.object().shape({
+//     username: Yup.string()
+//       .min(4, 'Min. 4 caractères pour définir un surnom.')
+//       .max(10, 'Min. 10 caractères pour définir un surnom.')
+//       .required('Champs requis. Veuillez définir votre surnom.'),
+//     email: Yup.string()
+//       .email('Adresse e-mail invalide.')
+//       .required('Champs requis. Veuillez définir votre adresse e-mail.'),
+//     password: Yup.string()
+//       .min(8, 'Min. 8 caractères pour définir votre mot passe.')
+//       .max(13, 'Min. 13 caractères pour définir votre mot passe.')
+//       .required('Champs requis. Veuillez définir un mot de passe'),
+//   }),
+//   onSubmit: async (values) => {
+//     await signUp(values)
+//     navigate('/login')
+//   },
+// })
+
 
   return (
     <div className="main-su-form">
