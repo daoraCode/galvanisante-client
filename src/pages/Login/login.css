@@ -17,18 +17,18 @@
 .si-form {
   max-width: 450px;
   margin: 0 auto;
-  /* overflow ? */
 }
 
 .si-em-ctn,  
 .si-pswd-ctn {
   min-width: 100%;
+  margin-bottom: 20px;
 }
 
 .si-form-error-alert {
   text-align: left;
-  font-size: 11px;
-  color: red;
+  font-size: 12px;
+  color: rgb(255, 83, 83);
 }
 
 .si-form-label {
@@ -39,7 +39,7 @@
 }
 
 .si-heading-text-form {
-  color: #fff;
+  color: hsl(0, 0%, 11%);
   font-size: 1.95em;
   text-align: center;
   display: block;
@@ -48,22 +48,22 @@
 }
 
 .si-input-form::placeholder {
-  color: #ffffff4e;
+  color: hsl(0, 0%, 77%);
 }
 
 .si-input-form[type=text], .si-input-form[type=email], .si-input-form[type=password] {
   display: block;
   width: 100%;
-  color: #fff;
+  color: hsl(0, 0%, 11%);
   font-family: inherit;
   font-size: 14px;
   height: 40px;
   padding: 0 .77em;
   margin: 8px auto;
   border-radius: 3px;
-  border: 3px solid rgba(241, 241, 241, 0.648);
-  transition: border-color 0.35s;
+  border: 3px solid rgba(255, 208, 101, 1);
   background-color: rgba(255, 254, 239, 0.417);
+  transition: border-color 0.35s;
 }
 
 .si-input-form[type=text]:focus, .si-input-form[type=email]:focus,  .si-input-form[type=password]:focus {
@@ -97,13 +97,13 @@
   margin: 40px auto;
   transition: border-color 0.35s;
   background-color:#ffd064;
-  color: #1b1b1b;
+  color: hsl(0, 0%, 11%);
 }
 
 .si-btn-form:hover {
   transition: all .4s ease-in-out;
   border-color: #c7ac6e;
-  color: #1b1b1b84;
+  color: hsl(0, 0%, 11%);
 }
 
 .si-btn-form:focus,

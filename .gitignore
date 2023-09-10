@@ -13,6 +13,8 @@ dist-ssr
 *.local
 # environment variables
 .env
+
+#ressources
 src/fonts/*
 
 # Editor directories and files

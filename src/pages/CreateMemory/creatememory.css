@@ -19,10 +19,10 @@
   background-color: #ffd58d;
   font-size: 15px;
   text-align: center;
-  color: black;
   border-radius: 5px;
   padding: .59em 2.72em;
   transition: all .3s ease;
+  color: hsl(0, 0%, 11%);
 }
 
 .cr-mry-btn:hover {
@@ -38,8 +38,8 @@
 
 .label-theme, .label-cover, .label-content {
   font-size: 1.2em;
-  color: #fff;
   padding-bottom: 10px;
+  color: hsl(0, 0%, 11%);
 }
 
 .input-theme[type=text], .input-cover[type=text], .input-content[type=text] {

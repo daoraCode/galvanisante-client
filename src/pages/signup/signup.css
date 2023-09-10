@@ -35,7 +35,7 @@
 }
 
 .su-heading-text-form {
-  color: #fff;
+  color: #1b1b1b;
   font-size: 1.95em;
   text-align: center;
   display: block;
@@ -44,7 +44,7 @@
 }
 
 .su-input-form::placeholder {
-  color: #ffffff4e;
+  color:#1b1b1b4b;
 }
 
 .su-input-form[type=text], .su-input-form[type=email], .su-input-form[type=password] {
@@ -57,7 +57,7 @@
   padding: 0 .77em;
   margin: 8px auto;
   border-radius: 3px;
-  border: 3px solid rgba(241, 241, 241, 0.648);
+  border: 3px solid rgba(255, 208, 101, 1);
   background-color: rgba(255, 254, 239, 0.494);
   transition: border-color 0.35s;
 }
