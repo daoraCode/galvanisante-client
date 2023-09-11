@@ -1,12 +1,12 @@
+import './home.css'
+
 import { useContext } from "react"
 import { MemoryContext } from "../../contexts/MemoryContext"
-import { MemoryCard } from "../../components/MemoryCard/MemoryCard"
-import "./home.css"
+import { MemoryCard } from '../../components/MemoryCard/MemoryCard'
+
 
 export const Home = () => {
   const { memories } = useContext(MemoryContext)
-
-  console.log('9, home', memories)
 
   return (
     <div className="hm-ctn">
