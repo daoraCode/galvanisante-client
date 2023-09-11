@@ -50,7 +50,7 @@
 .su-input-form[type=text], .su-input-form[type=email], .su-input-form[type=password] {
   display: block;
   width: 100%;
-  color: #fff;
+  color: #1b1b1b;
   font-family: inherit;
   font-size: 14px;
   height: 40px;
