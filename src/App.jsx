@@ -13,7 +13,8 @@ import { Home } from './pages/home/Home'
 import { SignUp } from './pages/signup/SignUp'
 import { Login } from './pages/login/Login'
 import { Memory } from './pages/memory/Memory'
-import { CreateMemory } from './pages/creatememory/CreateMemory'
+import { CreateMemory } from './pages/createMemory/CreateMemory'
+
 
 const App = () => {
   return (
