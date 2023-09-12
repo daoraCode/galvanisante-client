@@ -7,11 +7,12 @@ import { MemoryContextProvider } from './contexts/MemoryContext'
 
 import { Header } from './components/Header/Header'
 
-import { Home } from './pages/home/Home'
-import { SignUp } from './pages/signup/SignUp'
-import { Login } from './pages/login/Login'
-import { Memory } from './pages/memory/Memory'
-import { CreateMemory } from './pages/createMemory/CreateMemory'
+import { Home } from './pages/Home/Home'
+import { SignUp } from './pages/SignUp/SignUp'
+import { Login } from './pages/Login/Login'
+import { Memory } from './pages/Memory/Memory'
+import { CreateMemory } from './pages/CreateMemory/CreateMemory'
+
 
 const App = () => {
   return (
