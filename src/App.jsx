@@ -1,5 +1,6 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
+
 
 
 import { Routes, Route } from 'react-router-dom'
@@ -14,7 +15,6 @@ import { SignUp } from './pages/signup/SignUp'
 import { Login } from './pages/login/Login'
 import { Memory } from './pages/memory/Memory'
 import { CreateMemory } from './pages/createMemory/CreateMemory'
-
 
 const App = () => {
   return (
