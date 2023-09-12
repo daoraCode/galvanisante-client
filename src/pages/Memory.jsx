@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import { getTokenFromCookie } from "../../helpers/cookies"
+import { useContext, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { getTokenFromCookie } from '../helpers/cookies'
 // import { MemoryContext } from '../../contexts/MemoryContext'
-import { UserContext } from '../../contexts/UserContext'
+import { UserContext } from '../contexts/UserContext'
 import './memory.css'
 
 export const Memory = () => {
@@ -25,7 +25,7 @@ export const Memory = () => {
       try {
         const res = await fetch(urlGetMemory, {
           credentials: 'include',
-          headers: { Authorization: `Bearer ${token}` },
+          headers: { Authorization: `Bearer ${token}` }
         })
         const json = await res.json()
         setMemoryInfo(json.memory)
@@ -44,8 +44,8 @@ export const Memory = () => {
       credentials: 'include',
       headers: {
         // 'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
+        Authorization: `Bearer ${token}`
+      }
     })
     navigate('/')
     window.location.reload()
@@ -59,20 +59,20 @@ export const Memory = () => {
   console.log('user', user.id)
 
   return (
-    <div className="mry-dtl-ctn">
-      <div className="mry-dlt-img-ctn">
-        <h2 className="mry-dlt-heading">{memoryInfo.theme}</h2>
+    <div className='mry-dtl-ctn'>
+      <div className='mry-dlt-img-ctn'>
+        <h2 className='mry-dlt-heading'>{memoryInfo.theme}</h2>
         <img
-          className="mry-dtl-img"
+          className='mry-dtl-img'
           src={`${import.meta.env.VITE_BACKEND_API}/${memoryInfo.cover}`}
         />
       </div>
-      <div className="mry-ftr-ctn">
-        <div className="mry-content">{memoryInfo.content}</div>
+      <div className='mry-ftr-ctn'>
+        <div className='mry-content'>{memoryInfo.content}</div>
         {user.id === memoryInfo.creator && (
-          <div className="mry-btn-ctn">
-            <button className="mry-upd-btn">Éditer</button>
-            <button className="mry-rmv-btn" onClick={deleteMemory}>
+          <div className='mry-btn-ctn'>
+            <button className='mry-upd-btn'>Éditer</button>
+            <button className='mry-rmv-btn' onClick={deleteMemory}>
               Supprimer
             </button>
           </div>
