@@ -18,7 +18,6 @@ export const MemoryContextProvider = ({ children }) => {
     const res = await fetch(urlMemories, {
       credentials: 'include',
       headers: {
-        // 'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`,
       },
     })

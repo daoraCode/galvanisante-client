@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 export const UserContext = createContext({})
 
 export const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null) // <- initialized at null since it coulb be called (async)
+  const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -16,9 +16,6 @@ export const UserContextProvider = ({ children }) => {
       `${import.meta.env.VITE_BACKEND_API}/api/users/auth/me`,
       {
         credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        }
       }
     )
     const data = await res.json()
@@ -74,6 +71,7 @@ export const UserContextProvider = ({ children }) => {
         method: 'post',
       }
     )
+
     const data = res.json()
     return data
   }

@@ -12,9 +12,6 @@ export const Header = () => {
   useEffect(() => {
     fetch(urlProfile, {
       credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      }
     }).then((res) => {
       res.json().then((userData) => {
         setUser(userData.username)

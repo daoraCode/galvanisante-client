@@ -7,11 +7,9 @@ import { MemoryContextProvider } from './contexts/MemoryContext'
 
 import { Header } from './components/Header/Header'
 
-import { Home } from './pages/Home'
-
-import { SignUp } from './pages/SignUp'
-import { Login } from './pages/Login'
-
+import { Home } from "./pages/Home"
+import { SignUp } from "./pages/SignUp"
+import { Login } from "./pages/Login"
 import { Memory } from './pages/Memory'
 import { CreateMemory } from './pages/CreateMemory'
 
