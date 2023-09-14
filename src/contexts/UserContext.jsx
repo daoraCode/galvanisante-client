@@ -18,7 +18,9 @@ export const UserContextProvider = ({ children }) => {
         credentials: 'include',
       }
     )
+    console.log('response status :', res.status)
     const data = await res.json()
+    console.log('response data:', data)
     setUser(data.profile)
   }
 

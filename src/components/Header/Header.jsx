@@ -15,6 +15,7 @@ export const Header = () => {
     }).then((res) => {
       res.json().then((userData) => {
         setUser(userData.username)
+        console.log(userData)
       })
     })
   }, [])
